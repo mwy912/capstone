@@ -1,0 +1,48 @@
+Capstone Notes
+PSDS 4900
+
+Might be a good idea to work with public data sets!  Can be unclassified and not have to be NGA focused.
+
+Highly encouraged to have NGA mentor/stakeholder, but no longer required.
+
+Imagine everything you’ve done in 2xxx and 3xxx classes.  Bring together like final projects from classes, but up a notch.
+
+DON’T GET POLISHED DATA!!!!  GET REALISTIC DATA SETS!   DATA.GOV, work data, etc.  Data carpentry is part of the process.
+
+Dr. Scott will help make sure that it hits all the marks as we meet…. ex. build a dashboard - will show how to build predictive analysis
+
+Data story - you’re building everything as you go through the process, not at the end.
+
+Milestones 1 & 2 are email checkins.  
+
+Milestone 3/Deliverable 1 is a word document.  Due April 2nd.
+
+Milestone 4 - Real world data - look around, if I had this other information that I can bring in…
+
+Milestone 5 - Refinement mode.   Polish visualizations.  Extensive validation testing.  Understanding how to tune parameters, etc.  Running models and visualizations so that you can get the best results.  Heavy lifting.  
+
+Milestone 6 - Training & verification.   5 & 6 are deep data science after the carpentry from 3 & 4. 
+	Deliverable 2 - Build up from 4, 5, & 6.  A big chunk of the technical report.  Due June 11th.
+
+Milestone 7 & 8 are cleaning up loose ends.  
+
+Milestone 7 - Make sure key aspects from data viz.
+	Deliverable 3 - first draft of data story or technical report.  Build out the deliverables to make a tech report.  In the final project, you present a slide deck…. so build it out here and then turn into presentation.  Due July 1.
+
+Milestone 8 - Finalize data story.
+	Deliverable 4 - Due Aug 5.  Presentation on Aug 9-11.
+
+Make sure to use GIT to track (gitlab or github) or NGA’s GIT repository.
+
+
+Start building Milestone 3 now…. just keep sending updates to Dr. Scott as you work towards milestone 2.
+
+Enrollment will happen 2nd week of August.  
+MU process document will come out after that.
+
+
+Meteorites impact database
+https://catalog.data.gov/dataset/meteorite-landings
+“That sounds fun and hard”
+“what are things that limit you from here to there?  Even if it’s hard and the data doesn’t push you to that level, that’s okay.”
+“A really good project.”
