@@ -1,0 +1,99 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2578
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Arial-BoldMT;\f1\fswiss\fcharset0 ArialMT;\f2\fnil\fcharset0 HelveticaNeue-Bold;
+\f3\fnil\fcharset0 HelveticaNeue;\f4\froman\fcharset0 TimesNewRomanPSMT;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue10;\red0\green0\blue0;\red27\green31\blue34;
+\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c3922;\cssrgb\c0\c0\c0;\cssrgb\c14118\c16078\c18039;
+\cssrgb\c100000\c100000\c100000;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1440\margr1440\vieww14760\viewh10980\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs32 \cf2 \expnd0\expndtw0\kerning0
+Milestone 6/Deliverable 2:\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0 \cf2 The last milestone ended with my plan to come up with some formula or way to weigh the land cover and urban areas.\
+\
+My process began by finding which meteorite impacts were relatively close to urbanized areas.\
+\
+https://github.com/mwy912/capstone/blob/main/08_proximity%20analysis_R.ipynb\
+\
+I created a buffer of .25 degrees around every meteorite impact, and found which cities in the dataset intersected those buffers.  Then I found the year closest to the impact and recorded the population of that city and the year of the data.\
+\
+The results of this process is here: https://github.com/mwy912/capstone/blob/main/data/results/meteorites_population.csv\
+\
+For the Landcover analysis, I began by finding what the raster values were for the location of every meteorite impact. \
+\
+https://github.com/mwy912/capstone/blob/main/05b_Landcover_Analysis_R.ipynb  \
+\
+With a loop process, I found which raster was the latest before the impact and kept that value.  The results of that process is a table located here:  https://github.com/mwy912/capstone/blob/main/data/results/meteorites_landcover.csv\
+\
+\
+I next brought all three tables together - the meteorites, the urban areas near impacts, and the landcover values of the impacts.\
+\
+https://github.com/mwy912/capstone/blob/main/09_Synthesis_R.ipynb\
+\
+I found that only 239 meteorites were near an urban area, out of almost 10000.  I felt this was not significant and would be covered by landcover analysis. \
+\
+For Landcover, the way I determined to weight it was to total the LCs for the meteorites, and compare that to the LC of the entire earth.  For example, Temperate Deciduous Forest (LC = 11) makes up 69% of all the meteorite impact locations.  However, looking at the raster of the entire earth, Temperate Deciduous Forest makes up only 0.33% of the earth\'92s surface.\
+\
+By dividing .33%/69%, I assigned a weight to all 11\'92s in the dataset.  Id id the same thing for the other land covers.  This table was then joined back to the meteorites.  Here is that file: https://raw.githubusercontent.com/mwy912/capstone/main/data/results/meteorites_weighted.csv.\
+\
+To begin this stage of my analysis, located here, https://github.com/mwy912/capstone/blob/main/10_Starting%20Analysis_R.ipynb\
+\
+I used the weighted meteorites table, and converted recclass, fell_or_found, group+name, Chondrite or Achondrite, type, Level 3 and Level 4 and the LC_sample value into factors.  I divided the data set into two:  One of everything, and one of only the falls.  This allowed me to test correlations to the year of impact, since we can be sure of the date of impact on these.\
+\
+I ran one way ANOVAs against each of the factors as well as a two way ANOVA against Latitude and longitude.  The null hypothesis was rejected for the following comparisons:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\b\fs44 \cf0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0
+\f3\b0\fs28 \cf4 \cb5 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+year ~ chondrite\cf0 \cb1 \
+\ls1\ilvl0\cf4 \cb5 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+year ~ group
+\f2\b\fs44 \cf0 \cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0
+\f3\b0\fs28 \cf4 \cb5 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+mass ~ year\cf0 \cb1 \
+\ls2\ilvl0\cf4 \cb5 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+mass ~ chondrite\cf0 \cb1 \
+\ls2\ilvl0\cf4 \cb5 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+mass ~ group\cf0 \cb1 \
+\ls2\ilvl0\cf4 \cb5 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+mass ~ type\cf0 \cb1 \
+\ls2\ilvl0\cf4 \cb5 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+mass ~ latitude*longitude.\
+\pard\tx720\pardeftab720\partightenfactor0
+\cf4 \
+My next step was to divide both \'93all\'94 and \'93all falls\'94 into training and testing datasets.  The procedure is located here:  \
+\
+https://github.com/mwy912/capstone/blob/main/11_Train_and_test_R.ipynb\
+\
+Looking ahead, I want to perform predictive analysis using these two datasets.  I will continue to keep you updated on any developments.\
+\
+In response to my last milestone, John suggested I reflect on my original proposal and compare it to make sure I\'92m answering the question I set out to answer and what tweaks might be necessary.  I want to return to the five questions I asked in milestone 2:\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs32 \cf3 \cb1 \
+\'a0 - Do meteorites fall at random or are there patterns to their impact locations? \'a0Either as a whole or by class of meteorite or some other parameter.\
+\'a0\
+\'a0 - Are the numbers of meteorite falls consistent over history or are they changing?\
+\'a0\
+\'a0 - Is there any connection to human population? - i.e. more falls recorded because more people to see it, more finds because people are in the area.\
+\'a0\
+\'a0 - Are there trends between meteorites that have been observed hitting the ground and ones that are found?\
+\'a0\
+\'a0 - Can predictions be made about future meteorite impacts by studying past impact events?\
+\
+\
+I would say that I have not yet answered any of these questions, but I am definitely working towards them.  This was a good reminder to prevent \'93mission creep\'94 and to make sure that I am not taking on new or different problems than I set out in the beginning.}
