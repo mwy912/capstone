@@ -1,0 +1,610 @@
+,Cluster,mass,fell_found,year,latitude,longitude,group,chondrite,type,lc_sample
+9,2,1914.0,Fell,1976,16.88333,-99.9,Acapulcoite,Achondrite,Stony,0
+70,2,716.0,Found,1989,27.61667,4.56667,Mesosiderite,Achondrite,Stony-Iron,14
+240,2,621.0,Found,1991,27.50111,4.09861,Iron IAB,Achondrite,Iron,11
+270,2,83.0,Found,1991,27.715,4.19278,Mesosiderite,Achondrite,Stony-Iron,11
+282,2,41.0,Found,1991,27.63917,4.14278,Ureilite,Achondrite,Stony,11
+356,2,11935.0,Found,2001,27.48917,3.89,Eucrite,Achondrite,Stony,11
+369,2,3956.0,Found,1962,35.05,-107.56667,Main Group,Achondrite,Stony-Iron,13
+371,2,1.0,Found,1883,36.9,30.68333,Eucrite,Achondrite,Stony,15
+375,2,180000.0,Found,1881,38.7,-96.1,Main Group,Achondrite,Stony-Iron,1
+388,2,82.0,Found,2000,30.55,-4.9,Eucrite,Achondrite,Stony,11
+410,2,52600.0,Found,1909,30.7,-105.5,Main Group,Achondrite,Stony-Iron,13
+423,2,50000.0,Fell,1981,39.91667,42.81667,Iron IVA,Achondrite,Iron,11
+444,2,37600.0,Found,1915,41.5,-104.1,Main Group,Achondrite,Stony-Iron,1
+447,2,252.0,Fell,2002,45.82133,6.01533,Eucrite,Achondrite,Stony,11
+496,2,195.0,Found,2000,31.66667,-4.06667,Eucrite,Achondrite,Stony,11
+512,2,84.0,Found,1940,37.26667,-97.76667,Main Group,Achondrite,Stony-Iron,1
+551,2,800.0,Fell,1836,44.38333,5.16667,Aubrite,Achondrite,Stony,11
+569,2,136000.0,Found,1876,36.3,-82.88333,Iron,Achondrite,Iron,11
+570,2,6400.0,Found,1842,36.3,-82.88333,Iron,Achondrite,Iron,11
+587,2,16700.0,Fell,1993,16.66667,101.18333,Iron,Achondrite,Iron,11
+597,2,87.0,Found,1950,46.1,12.35,Main Group,Achondrite,Stony-Iron,8
+623,2,80000.0,Found,1994,-33.0,-56.0,Iron IAB,Achondrite,Iron,11
+649,2,27000.0,Found,1898,-37.15,148.91667,Ungrouped,Achondrite,Stony-Iron,11
+661,2,18000.0,Fell,1924,11.65,-3.65,Eucrite,Achondrite,Stony,16
+673,2,2500.0,Fell,1905,22.08333,86.9,Howardite,Achondrite,Stony,1
+674,2,4000.0,Fell,1827,53.1,23.2,Eucrite,Achondrite,Stony,10
+677,2,25000.0,Fell,1999,12.45,-0.08333,Diogenite,Achondrite,Stony,11
+680,2,5400.0,Found,1912,-34.31667,149.38333,Eucrite,Achondrite,Stony,2
+689,2,6000.0,Fell,1843,34.16667,-80.28333,Aubrite,Achondrite,Stony,12
+696,2,800.0,Found,1839,35.58333,-82.35,Iron IAB,Achondrite,Iron,11
+708,2,6.1,Found,2000,40.2495,-118.93683,Eucrite,Achondrite,Stony,11
+731,2,888600.0,Found,1956,13.51667,122.45,Mesosiderite,Achondrite,Stony-Iron,1
+744,2,500.0,Found,1850,37.5,-79.75,Iron,Achondrite,Iron,11
+748,2,8300.0,Found,1978,44.92222,5.26778,Eucrite,Achondrite,Stony,11
+757,2,823000.0,Found,1810,52.5,30.33333,Main Group,Achondrite,Stony-Iron,10
+765,2,13600.0,Found,1890,35.71667,-81.86667,Iron IID,Achondrite,Iron,11
+766,2,219.0,Fell,1933,52.13333,59.31667,Eucrite,Achondrite,Stony,2
+769,2,20000.0,Found,1937,36.56667,-82.18333,Iron IVA,Achondrite,Iron,11
+785,2,100000.0,Found,1962,50.56667,114.9,Mesosiderite,Achondrite,Stony-Iron,13
+804,2,1500.0,Fell,1852,26.78333,82.83333,Aubrite,Achondrite,Stony,1
+811,2,23500.0,Found,1916,-36.4,-59.5,Eucrite,Achondrite,Stony,2
+812,2,2500.0,Found,1874,-25.0,-69.5,Iron IIIE,Achondrite,Iron,13
+816,2,500.0,Found,1967,-27.05,-70.8,Eucrite,Achondrite,Stony,13
+818,2,7275.0,Found,1938,36.08333,-92.15,Iron IIAB,Achondrite,Iron,11
+822,2,25000.0,Found,1984,-30.31667,126.61667,Eucrite,Achondrite,Stony,14
+825,2,32.8,Found,1990,-30.31667,126.56667,Howardite,Achondrite,Stony,11
+897,2,723.0,Found,1877,37.25,-85.0,Iron IAB,Achondrite,Iron,11
+918,2,20600.0,Found,1997,-22.21667,-68.90833,Iron IIIF,Achondrite,Iron,11
+934,2,4300.0,Fell,1835,36.16667,-87.33333,Iron IVA,Achondrite,Iron,11
+937,2,4000.0,Fell,1815,47.71667,5.36667,Chassignite,Achondrite,Stony,11
+939,2,2945.0,Fell,1925,41.93333,-7.46667,Howardite,Achondrite,Stony,1
+941,2,5390.0,Found,2003,51.53333,94.6,Iron IID,Achondrite,Iron,11
+946,2,1700.0,Fell,1939,50.83333,34.0,Eucrite,Achondrite,Stony,1
+958,2,4050.0,Found,1920,20.25,-12.68333,Mesosiderite,Achondrite,Stony-Iron,14
+963,2,1802.0,Found,1992,35.25,-118.09067,Iron IAB,Achondrite,Iron,11
+974,2,11300.0,Found,1937,38.0,-84.16667,Iron IIIF,Achondrite,Iron,11
+982,2,7700.0,Found,1950,36.08333,-84.2,Iron,Achondrite,Iron,11
+984,2,7700.0,Found,1954,34.45,-111.36667,Mesosiderite,Achondrite,Stony-Iron,13
+995,2,320.0,Found,1921,55.18333,-162.55,Eagle Station Group,Achondrite,Stony-Iron,0
+1033,2,2300.0,Found,1913,36.16667,-85.51667,Iron IAB,Achondrite,Iron,11
+1050,2,960000.0,Found,1837,35.78333,-83.25,Iron IAB,Achondrite,Iron,11
+1061,2,48500.0,Found,1887,35.83333,-84.91667,Mesosiderite,Achondrite,Stony-Iron,11
+1062,2,90.0,Found,1852,37.23333,-80.73333,Iron IVA,Achondrite,Iron,11
+1092,2,17000.0,Fell,1919,36.83333,-84.35,Aubrite,Achondrite,Stony,11
+1101,2,12200.0,Found,1923,-27.71667,117.25,Mesosiderite,Achondrite,Stony-Iron,14
+1194,2,277.0,Found,1995,27.04067,16.40433,Ureilite,Achondrite,Stony,11
+1211,2,17.92,Found,1997,27.0135,16.36583,Ureilite,Achondrite,Stony,11
+1222,2,119.0,Found,2000,27.04133,16.38767,Ureilite,Achondrite,Stony,11
+1234,2,149.0,Found,1999,27.02583,16.38783,Ureilite,Achondrite,Stony,11
+1245,2,222.0,Found,1999,27.03367,16.38333,Ureilite,Achondrite,Stony,11
+1246,2,4012.4,Found,1999,27.33333,16.21667,Shergottite,Achondrite,Stony,11
+1306,2,57.0,Found,1996,27.0505,16.40517,Ureilite,Achondrite,Stony,11
+1307,2,32.0,Found,1996,27.05117,16.39233,Ureilite,Achondrite,Stony,11
+1404,2,513.0,Found,1997,27.18367,16.30033,Lunar,Achondrite,Stony,11
+1418,2,98.0,Found,1997,27.3775,16.19317,Eucrite,Achondrite,Stony,11
+1461,2,740.0,Found,1997,27.028,16.35867,Ureilite,Achondrite,Stony,11
+1482,2,591.0,Found,1997,27.15133,16.045,Ureilite,Achondrite,Stony,11
+1522,2,661.0,Found,1997,27.44217,16.08217,Eucrite,Achondrite,Stony,11
+1533,2,1605.0,Found,1997,27.35683,16.167,Eucrite,Achondrite,Stony,11
+1542,2,1425.0,Found,1998,27.3695,16.19883,Lunar,Achondrite,Stony,11
+1548,2,5100.0,Found,1998,28.14033,15.82383,Iron IAB,Achondrite,Iron,11
+1553,2,400.0,Found,1998,27.37517,16.18417,Eucrite,Achondrite,Stony,11
+1555,2,156.0,Found,1998,27.48733,16.32517,Iron IIAB,Achondrite,Iron,11
+1585,2,255.0,Found,1998,27.452,16.021,Eucrite,Achondrite,Stony,11
+1617,2,2015.0,Found,1998,27.35267,16.20067,Shergottite,Achondrite,Stony,11
+1621,2,181.0,Found,1998,27.3685,16.1735,Eucrite,Achondrite,Stony,11
+1626,2,596.0,Found,1997,27.01767,16.38833,Ureilite,Achondrite,Stony,11
+1630,2,2146.0,Found,1997,27.13333,16.08333,Shergottite,Achondrite,Stony,11
+1635,2,50.0,Found,1997,27.16883,16.13817,Ureilite,Achondrite,Stony,11
+1706,2,21.44,Found,1997,27.23583,16.06033,Eucrite,Achondrite,Stony,11
+1748,2,696.0,Found,1998,26.8855,16.58017,Eucrite,Achondrite,Stony,11
+1786,2,1425.0,Found,1997,27.16667,16.13333,Eucrite,Achondrite,Stony,11
+1799,2,86.0,Found,1999,27.03333,16.38333,Ureilite,Achondrite,Stony,11
+1800,2,23.0,Found,1999,27.05,16.38333,Ureilite,Achondrite,Stony,11
+1804,2,363.0,Found,1999,27.05,16.35,Ureilite,Achondrite,Stony,11
+1808,2,926.0,Found,1999,27.33333,16.16667,Howardite,Achondrite,Stony,11
+1809,2,485.0,Found,1999,27.35,16.16667,Howardite,Achondrite,Stony,11
+1818,2,78.0,Found,1999,27.05,16.4,Ureilite,Achondrite,Stony,11
+1819,2,110.0,Found,1999,27.05,16.38333,Ureilite,Achondrite,Stony,11
+1822,2,2210.0,Found,1999,27.08333,16.38333,Eucrite,Achondrite,Stony,11
+1830,2,734.0,Found,1999,27.08333,16.36667,Ureilite,Achondrite,Stony,11
+1831,2,8.0,Found,1999,27.08333,16.36667,Ureilite,Achondrite,Stony,11
+1872,2,588.0,Found,1997,27.16667,16.16667,Shergottite,Achondrite,Stony,11
+1905,2,77.9,Found,1999,26.9835,16.46833,Eucrite,Achondrite,Stony,11
+1916,2,18800.0,Found,1999,26.99233,16.4375,Howardite,Achondrite,Stony,11
+1924,2,32.1,Found,2000,27.0415,16.40083,Ureilite,Achondrite,Stony,11
+1938,2,25.2,Found,2000,27.04683,16.40883,Ureilite,Achondrite,Stony,11
+1967,2,53.1,Found,2000,27.04833,16.38433,Ureilite,Achondrite,Stony,11
+1981,2,143.0,Found,1999,27.396,16.1905,Eucrite,Achondrite,Stony,11
+1994,2,72.0,Found,1999,27.0415,16.3725,Ureilite,Achondrite,Stony,11
+2000,2,361.0,Found,1999,26.9195,16.674,Eucrite,Achondrite,Stony,11
+2005,2,40.0,Found,2000,28.0,16.0,Ureilite,Achondrite,Stony,11
+2009,2,885.0,Found,2001,27.21917,16.22633,Eucrite,Achondrite,Stony,11
+2011,2,64.6,Found,2000,27.04183,16.405,Ureilite,Achondrite,Stony,11
+2013,2,6.2,Found,1998,27.5,16.5,Shergottite,Achondrite,Stony,11
+2016,2,26.0,Found,2000,27.13333,16.46667,Ureilite,Achondrite,Stony,11
+2018,2,86.0,Found,2000,27.43333,16.2,Howardite,Achondrite,Stony,11
+2034,2,73.0,Found,2000,27.66667,16.35,Ureilite,Achondrite,Stony,11
+2046,2,740.0,Found,2000,27.35,16.18333,Howardite,Achondrite,Stony,11
+2054,2,255.0,Found,2000,27.0,16.35,Ureilite,Achondrite,Stony,11
+2063,2,23.0,Found,2000,27.4,16.23333,Howardite,Achondrite,Stony,11
+2075,2,300.0,Found,2000,27.18867,16.37583,Eucrite,Achondrite,Stony,11
+2092,2,130.0,Found,1998,27.198,16.4085,Achondrite,Achondrite,Stony,11
+2103,2,82.0,Found,1999,27.4505,16.22383,Eucrite,Achondrite,Stony,11
+2105,2,27.55,Found,1999,27.32717,16.21667,Shergottite,Achondrite,Stony,11
+2106,2,32.03,Found,1999,27.05417,16.3875,Ureilite,Achondrite,Stony,11
+2107,2,17.0,Found,2000,27.08333,16.36667,Ureilite,Achondrite,Stony,11
+2113,2,933.0,Found,2002,26.7375,16.8995,Eucrite,Achondrite,Stony,11
+2125,2,56.12,Found,2001,27.1725,16.38617,Eucrite,Achondrite,Stony,11
+2128,2,2106.0,Found,2000,27.02583,16.36583,Ureilite,Achondrite,Stony,11
+2237,2,21270.0,Found,1999,18.335,54.18167,Eucrite,Achondrite,Stony,11
+2248,2,833.0,Found,2000,18.30167,54.15333,Howardite,Achondrite,Stony,11
+2249,2,1056.0,Found,2000,18.315,54.14833,Shergottite,Achondrite,Stony,11
+2255,2,751.0,Found,2000,18.40333,54.15167,Lunar,Achondrite,Stony,11
+2256,2,148.0,Found,2000,18.22667,54.11167,Lunar,Achondrite,Stony,11
+2285,2,235.0,Found,1999,19.14767,54.77633,Eucrite,Achondrite,Stony,11
+2311,2,174.0,Found,1999,19.322,54.78267,Lunar,Achondrite,Stony,11
+2423,2,90.0,Found,2003,18.7221,54.46077,Lunar,Achondrite,Stony,11
+2424,2,197.0,Found,2003,19.3281,54.77718,Lunar,Achondrite,Stony,11
+2441,2,2697.0,Found,2000,18.98667,54.6005,Acapulcoite,Achondrite,Stony,11
+2448,2,5010.0,Found,2000,19.15,54.58067,Ureilite,Achondrite,Stony,11
+2497,2,255.1,Found,2000,18.93833,54.50133,Eucrite,Achondrite,Stony,11
+2589,2,353.0,Found,2001,19.15167,54.775,Eucrite,Achondrite,Stony,11
+2599,2,216.0,Found,2001,18.43333,54.17,Eucrite,Achondrite,Stony,11
+2609,2,48.0,Found,2002,19.20833,54.64,Ureilite,Achondrite,Stony,11
+2614,2,624.0,Found,2001,18.40333,54.14333,Eucrite,Achondrite,Stony,11
+2623,2,81.3,Found,2002,19.32667,54.78833,Lunar,Achondrite,Stony,11
+2624,2,10.8,Found,2002,19.32833,54.785,Lunar,Achondrite,Stony,11
+2691,2,15.0,Found,2000,18.15833,54.11333,Shergottite,Achondrite,Stony,11
+2772,2,101.0,Found,2001,19.13828,54.89889,Eucrite,Achondrite,Stony,11
+2792,2,116.0,Found,2000,18.38667,54.20333,Achondrite,Achondrite,Stony,11
+2987,2,2770.0,Found,2002,19.30833,54.55167,Diogenite,Achondrite,Stony,11
+3015,2,108.0,Found,2002,19.325,54.79167,Lunar,Achondrite,Stony,11
+3016,2,36.0,Found,2002,19.33333,54.795,Lunar,Achondrite,Stony,11
+3017,2,17.0,Found,2002,19.405,54.57833,Achondrite,Achondrite,Stony,11
+3018,2,98.0,Found,2002,18.58833,54.23,Lunar,Achondrite,Stony,11
+3055,2,156.0,Found,2000,18.72542,54.73048,Diogenite,Achondrite,Stony,11
+3113,2,995.0,Found,2000,18.34867,54.214,Ureilite,Achondrite,Stony,11
+3114,2,900.1,Found,2000,18.30583,54.14967,Ureilite,Achondrite,Stony,11
+3142,2,245.0,Found,2003,19.33167,54.78333,Lunar,Achondrite,Stony,11
+3143,2,3.9,Found,2003,19.33015,54.77972,Lunar,Achondrite,Stony,11
+3158,2,49.0,Found,2003,19.39667,54.56333,Lunar,Achondrite,Stony,11
+3163,2,18.0,Found,2003,19.39,54.55833,Eucrite,Achondrite,Stony,11
+3178,2,122.7,Found,1965,-30.43333,126.1,Ureilite,Achondrite,Stony,14
+3181,2,12700.0,Found,1981,45.7,43.7,Achondrite,Achondrite,Stony,1
+3193,2,128800.0,Fell,1995,45.5,119.03333,Mesosiderite,Achondrite,Stony-Iron,11
+3196,2,414.0,Found,1918,-33.61667,115.91667,Mesosiderite,Achondrite,Stony-Iron,1
+3215,2,40000.0,Found,2000,54.74667,41.42167,Iron,Achondrite,Iron,11
+3220,2,22700.0,Found,1906,40.38333,-110.86667,Iron IVA,Achondrite,Iron,11
+3221,2,21800.0,Found,1854,35.85,-82.7,Iron IVA,Achondrite,Iron,11
+3222,2,11300.0,Found,1873,35.85,-82.7,Iron IAB,Achondrite,Iron,11
+3229,2,13000.0,Found,1922,36.85,-82.45,Iron IAB,Achondrite,Iron,11
+3234,2,48.8,Found,2002,34.48333,-113.91667,Iron IIAB,Achondrite,Iron,11
+3238,2,300.0,Fell,1872,26.25,82.0,Ureilite,Achondrite,Stony,1
+3239,2,188.0,Fell,1933,-3.0,151.0,Mesosiderite,Achondrite,Stony-Iron,0
+3242,2,36000.0,Found,1880,38.61667,-84.96667,Eagle Station Group,Achondrite,Stony-Iron,11
+3248,2,10200.0,Found,1942,37.03333,-85.63333,Iron IAB,Achondrite,Iron,11
+3281,2,2100.0,Found,2000,30.1,-6.85,Ureilite,Achondrite,Stony,11
+3291,2,40.7,Found,1954,37.0,-105.0,Ungrouped,Achondrite,Stony-Iron,13
+3313,2,1470.0,Fell,1925,51.75,4.0,Diogenite,Achondrite,Stony,1
+3321,2,1200.0,Found,1981,-57.78667,-90.79333,Mesosiderite,Achondrite,Stony-Iron,0
+3324,2,16700.0,Found,1962,43.56333,-97.58333,Mesosiderite,Achondrite,Stony-Iron,1
+3325,2,127.0,Fell,1900,-29.46667,151.61667,Eucrite,Achondrite,Stony,2
+3344,2,755000.0,Found,1951,-42.9,-71.33333,Main Group,Achondrite,Stony-Iron,10
+3382,2,27.3,Found,1992,31.735,-110.75333,Iron IAB,Achondrite,Iron,11
+3445,2,312.0,Found,1998,-35.13333,-65.36667,Winonaite,Achondrite,Stony,11
+3447,2,6000.0,Found,1998,30.06667,-6.9,Iron IIAB,Achondrite,Iron,11
+3453,2,650.0,Fell,1868,34.48333,-87.83333,Howardite,Achondrite,Stony,12
+3508,2,67.1,Found,1991,-33.68333,121.8,Loderanite,Achondrite,Stony,11
+3513,2,4275.0,Found,1954,49.61667,-96.55,Main Group,Achondrite,Stony-Iron,1
+3526,2,148000.0,Found,1884,35.6,-105.8,Main Group,Achondrite,Stony-Iron,13
+3529,2,2700.0,Found,1868,26.16667,90.6,Ureilite,Achondrite,Stony,0
+3541,2,158.0,Found,1958,-18.85,-41.95,Nakhilite,Achondrite,Stony,17
+3556,2,110.0,Found,1991,26.05,25.66667,Iron,Achondrite,Iron,11
+3588,2,13100.0,Found,2000,-25.1,-69.53333,Iron IIG,Achondrite,Iron,11
+3625,2,30000.0,Found,1999,42.96667,-80.15,Iron IAB,Achondrite,Iron,11
+3628,2,16500.0,Found,1856,52.28333,8.91667,Mesosiderite,Achondrite,Stony-Iron,1
+3629,2,596.0,Found,1958,19.91667,56.25,Ureilite,Achondrite,Stony,14
+3696,2,143.0,Found,1994,28.9455,13.0695,Eucrite,Achondrite,Stony,11
+3701,2,136.0,Found,1994,28.77767,12.3355,Ureilite,Achondrite,Stony,11
+3763,2,1998.0,Found,1995,28.475,12.9465,Ureilite,Achondrite,Stony,11
+3830,2,259.0,Found,1996,28.65467,13.45867,Winonaite,Achondrite,Stony,11
+3898,2,1078.0,Found,2000,28.455,12.85083,Eucrite,Achondrite,Stony,11
+3899,2,377.0,Found,2000,28.45517,12.86817,Eucrite,Achondrite,Stony,11
+3922,2,1236.0,Found,2000,29.03857,13.20712,Howardite,Achondrite,Stony,11
+3923,2,612.0,Found,2000,29.05568,13.11937,Eucrite,Achondrite,Stony,11
+3974,2,1000.0,Fell,1878,26.8,82.53333,Eucrite,Achondrite,Stony,1
+3990,2,30000.0,Found,1947,35.95,-84.56667,Iron IVA,Achondrite,Iron,11
+4008,2,1544.0,Fell,1971,60.24556,22.06194,Ureilite,Achondrite,Stony,1
+4062,2,49000.0,Fell,1751,46.1,16.33333,Iron IID,Achondrite,Iron,11
+4074,2,304.0,Found,1991,-30.58517,129.58667,Howardite,Achondrite,Stony,11
+4075,2,284.0,Found,1991,-30.60267,129.57528,Howardite,Achondrite,Stony,11
+4077,2,58.0,Found,1991,-30.56833,129.6375,Ureilite,Achondrite,Stony,11
+4079,2,108.0,Found,1991,-30.41667,129.81667,Ureilite,Achondrite,Stony,11
+4096,2,360.0,Found,1995,-30.0,129.16667,Brachinite,Achondrite,Stony,11
+4136,2,2000.0,Fell,1870,52.28333,7.7,Diogenite,Achondrite,Stony,1
+4137,2,2500.0,Fell,1957,-20.0,-45.0,Eucrite,Achondrite,Stony,1
+4143,2,1470.0,Found,2000,29.23333,-8.36667,Eucrite,Achondrite,Stony,11
+4148,2,4121.0,Found,1989,21.51667,1.3,Mesosiderite,Achondrite,Stony-Iron,14
+4165,2,2500.0,Found,1899,46.68333,-112.55,Iron,Achondrite,Iron,13
+4166,2,920000.0,Found,1822,-24.20333,-68.80667,Main Group,Achondrite,Stony-Iron,13
+4170,2,14100.0,Found,1887,36.93333,-80.5,Iron IIAB,Achondrite,Iron,11
+4195,2,350.0,Found,1946,-26.26667,18.18333,Eagle Station Group,Achondrite,Stony-Iron,14
+4212,2,55400.0,Found,1946,36.82444,-93.76111,Iron IAB,Achondrite,Iron,11
+4213,2,12000.0,Found,1883,37.9,-82.38333,Iron IAB,Achondrite,Iron,11
+4255,2,141.0,Found,2000,19.77562,56.64048,Eucrite,Achondrite,Stony,11
+4304,2,30.0,Fell,1877,55.7,24.4,Howardite,Achondrite,Stony,10
+4309,2,40300.0,Fell,1924,40.35,-104.9,Diogenite,Achondrite,Stony,1
+4312,2,30.0,Found,1891,36.3,-82.46667,Iron IVA,Achondrite,Iron,11
+4313,2,5000.0,Fell,1819,45.43333,-0.45,Eucrite,Achondrite,Stony,1
+4324,2,91000.0,Fell,1821,44.71667,4.3,Eucrite,Achondrite,Stony,11
+4376,2,6690.0,Found,1950,37.21667,-82.0,Iron IIAB,Achondrite,Iron,11
+4392,2,1040.0,Found,2000,31.1325,25.04717,Iron IVA,Achondrite,Iron,11
+4421,2,97.7,Fell,1906,30.75,-95.95,Eucrite,Achondrite,Stony,1
+4456,2,700000.0,Found,1749,54.9,91.8,Main Group,Achondrite,Stony-Iron,8
+4465,2,2500.0,Found,1929,50.375,21.73333,Iron,Achondrite,Iron,1
+4490,2,626000.0,Found,1828,43.73333,6.78333,Iron,Achondrite,Iron,11
+4504,2,800.0,Found,1993,45.95,-73.91667,Iron IAB,Achondrite,Iron,11
+4506,2,800.0,Found,1931,40.41667,-86.88333,Nakhilite,Achondrite,Stony,1
+4527,2,900.0,Fell,1955,26.78333,82.71667,Ureilite,Achondrite,Stony,1
+4529,2,212.5,Fell,1910,21.86667,76.03333,Eucrite,Achondrite,Stony,2
+4540,2,270000.0,Found,1933,34.1,-97.0,Iron IIAB,Achondrite,Iron,11
+4547,2,38690.0,Found,1940,38.07778,-96.02639,Mesosiderite,Achondrite,Stony-Iron,1
+4551,2,69800.0,Found,1930,38.9,-79.18333,Iron IAB,Achondrite,Iron,11
+4560,2,148.0,Found,1994,22.58333,-101.98333,Howardite,Achondrite,Stony,11
+4573,2,780.0,Fell,1845,48.53333,-0.86667,Howardite,Achondrite,Stony,1
+4614,2,442.0,Found,1882,35.86667,-81.91667,Iron IAB,Achondrite,Iron,11
+4627,2,235.0,Found,1937,36.41667,-85.25,Iron IAB,Achondrite,Iron,11
+4633,2,40000.0,Fell,1994,26.96556,72.62667,Howardite,Achondrite,Stony,11
+4660,2,59000.0,Fell,1935,52.0,19.91667,Mesosiderite,Achondrite,Stony-Iron,1
+4696,2,885.0,Fell,1813,61.2,27.7,Howardite,Achondrite,Stony,10
+4707,2,1995.0,Fell,1936,-28.83333,31.95,Eucrite,Achondrite,Stony,1
+4726,2,22270.0,Found,1991,-24.91667,16.98333,Iron IAB,Achondrite,Iron,11
+4727,2,807.0,Fell,1933,-29.45,26.76667,Eucrite,Achondrite,Stony,2
+4730,2,50.0,Fell,1843,20.96667,76.1,Diogenite,Achondrite,Stony,1
+4739,2,3000.0,Found,1906,50.81667,8.76667,Ungrouped,Achondrite,Stony-Iron,1
+4744,2,340.0,Fell,1898,42.71667,-99.38333,Iron,Achondrite,Iron,11
+4748,2,144.0,Found,1976,47.9,37.5,Iron IIAB,Achondrite,Iron,11
+4751,2,45000.0,Fell,1902,61.5,30.5,Main Group,Achondrite,Stony-Iron,0
+4762,2,26000.0,Found,1992,54.25,84.33333,Iron IAB,Achondrite,Iron,11
+4765,2,1600.0,Fell,1803,48.13333,12.61667,Howardite,Achondrite,Stony,10
+4786,2,31.0,Fell,1953,-27.25,-67.5,Eucrite,Achondrite,Stony,13
+4826,2,265000.0,Found,1992,-27.83333,150.33333,Iron IIE,Achondrite,Iron,11
+4827,2,265000.0,Found,1992,-27.83333,150.33333,Iron IIE,Achondrite,Iron,11
+4828,2,265000.0,Found,1992,-27.83333,150.33333,Iron IIE,Achondrite,Iron,11
+4829,2,265000.0,Found,1992,-27.83333,150.33333,Iron IIE,Achondrite,Iron,11
+4830,2,265000.0,Found,1992,-27.83333,150.33333,Iron IIE,Achondrite,Iron,11
+4831,2,265000.0,Found,1992,-27.83333,150.33333,Iron IIE,Achondrite,Iron,11
+4832,2,265000.0,Found,1992,-27.83333,150.33333,Iron IIE,Achondrite,Iron,11
+4833,2,265000.0,Found,1992,-27.83333,150.33333,Iron IIE,Achondrite,Iron,11
+4835,2,330000.0,Fell,1960,-26.45,120.36667,Eucrite,Achondrite,Stony,2
+4843,2,2040.0,Found,2000,40.2875,-95.37667,Ungrouped,Achondrite,Stony-Iron,11
+4846,2,89400.0,Found,1857,36.55,-93.1,Mesosiderite,Achondrite,Stony-Iron,11
+4847,2,42.0,Fell,1826,37.28333,14.7,Ungrouped,Achondrite,Stony-Iron,15
+4855,2,3416.0,Found,1940,-35.95,144.51667,Eucrite,Achondrite,Stony,2
+4863,2,104000.0,Found,1912,-33.28333,148.88333,Main Group,Achondrite,Stony-Iron,1
+4868,2,360000.0,Found,1994,49.55,4.86667,Iron,Achondrite,Iron,11
+4873,2,210.0,Found,1982,36.95,-84.9,Howardite,Achondrite,Stony,11
+4880,2,1880.0,Fell,1913,35.41667,-79.38333,Eucrite,Achondrite,Stony,2
+4894,2,16300.0,Found,1887,36.2,-83.38333,Mesosiderite,Achondrite,Stony-Iron,11
+4910,2,11300.0,Found,1903,-32.33333,151.2,Ungrouped,Achondrite,Stony-Iron,12
+4912,2,22000.0,Found,1941,-24.76667,117.7,Aubrite,Achondrite,Stony,14
+4919,2,272000.0,Found,1964,-25.66667,118.1,Mesosiderite,Achondrite,Stony-Iron,14
+4923,2,159000.0,Found,1868,36.93333,-87.4,Main Group,Achondrite,Stony-Iron,1
+4927,2,98.0,Found,1991,-30.05,130.21667,Howardite,Achondrite,Stony,11
+4973,2,24.0,Found,1990,-30.5,127.5,Howardite,Achondrite,Stony,11
+4975,2,60.0,Found,1989,-30.83333,127.5,Howardite,Achondrite,Stony,14
+4980,2,8600.0,Found,1847,35.83333,-86.41667,Iron,Achondrite,Iron,11
+4984,2,7700.0,Found,1899,35.1,-84.03333,Iron IIAB,Achondrite,Iron,11
+4994,2,20.0,Fell,1875,26.98333,78.21667,Eucrite,Achondrite,Stony,1
+5000,2,10000.0,Fell,1911,31.31667,30.35,Nakhilite,Achondrite,Stony,14
+5039,2,73030.0,Found,1856,37.75,-85.5,Iron IIIF,Achondrite,Iron,11
+5070,2,287.0,Found,1950,52.83333,13.93333,Iron IAB,Achondrite,Iron,11
+5079,2,2300.0,Fell,1823,44.08333,-69.48333,Eucrite,Achondrite,Stony,10
+5096,2,964.0,Found,1961,-30.21667,126.21667,Ureilite,Achondrite,Stony,14
+5112,2,40.0,Found,1999,31.33333,-4.33333,Achondrite,Achondrite,Stony,11
+5133,2,300.0,Found,1999,30.36667,-5.05,Lunar,Achondrite,Stony,11
+5172,2,6310.0,Found,2002,29.53333,-3.18333,Howardite,Achondrite,Stony,11
+5179,2,422.0,Found,2000,30.91667,-4.9,Ureilite,Achondrite,Stony,11
+5210,2,156.0,Found,2000,30.66667,-4.98333,Lunar,Achondrite,Stony,11
+5239,2,712.0,Found,2000,31.7025,-4.96833,Eucrite,Achondrite,Stony,11
+5241,2,313.0,Found,2000,26.56,-11.5555,Ureilite,Achondrite,Stony,11
+5243,2,633.0,Found,2000,26.76667,-12.81667,Lunar,Achondrite,Stony,11
+5267,2,1900.0,Fell,1886,54.81667,46.0,Ureilite,Achondrite,Stony,1
+5271,2,500.0,Found,1950,27.5,-99.5,Eucrite,Achondrite,Stony,2
+5293,2,41000.0,Found,1863,52.26667,9.1,Iron IVA,Achondrite,Iron,11
+5296,2,28570.0,Found,1990,32.83333,-116.06667,Iron IAB,Achondrite,Iron,11
+5311,2,4742.0,Fell,1904,35.08333,135.2,Iron IIAB,Achondrite,Iron,11
+5316,2,783.0,Found,1991,-31.16667,127.75,Howardite,Achondrite,Stony,11
+5327,2,250000.0,Fell,1981,64.02,161.80833,Main Group,Achondrite,Stony-Iron,6
+5328,2,164.0,Found,1997,63.16667,137.66667,Iron,Achondrite,Iron,11
+5345,2,8400.0,Found,1986,24.18333,-105.03333,Main Group,Achondrite,Stony-Iron,12
+5366,2,3900.0,Found,1952,44.6125,18.41806,Iron IAB,Achondrite,Iron,11
+5368,2,3858.0,Fell,1929,55.66667,25.0,Eucrite,Achondrite,Stony,10
+5377,2,1482.0,Found,1954,36.5,-104.5,Eucrite,Achondrite,Stony,13
+5404,2,5100.0,Fell,1933,36.21667,-103.4,Eucrite,Achondrite,Stony,13
+5411,2,37350.0,Fell,1935,23.15,91.18333,Mesosiderite,Achondrite,Stony-Iron,1
+5421,2,117.8,Fell,1953,51.66667,9.25,Diogenite,Achondrite,Stony,1
+5427,2,70000.0,Fell,1946,30.125,-103.11667,Aubrite,Achondrite,Stony,15
+5432,2,165.0,Fell,1899,-10.66667,35.5,Eucrite,Achondrite,Stony,16
+5436,2,5000.0,Found,1893,35.05,-84.23333,Iron IAB,Achondrite,Iron,11
+5441,2,1800.0,Fell,1855,35.3,-86.63333,Eucrite,Achondrite,Stony,11
+5469,2,42000.0,Fell,1996,26.03472,73.94167,Eucrite,Achondrite,Stony,11
+5499,2,327.0,Found,1964,62.2,54.16667,Eucrite,Achondrite,Stony,9
+5544,2,59000.0,Found,1984,-10.75,-39.21667,Main Group,Achondrite,Stony-Iron,16
+5570,2,155.0,Found,1987,24.3,-102.18333,Eucrite,Achondrite,Stony,13
+5581,2,74.0,Found,1959,-31.16667,125.26667,Main Group,Achondrite,Stony-Iron,13
+5615,2,330.0,Found,1991,-30.08333,128.91667,Brachinite,Achondrite,Stony,11
+5618,2,110.0,Found,1995,-30.16667,129.0,Ureilite,Achondrite,Stony,11
+5629,2,19.7,Found,1991,-30.31806,128.37333,Brachinite,Achondrite,Stony,11
+5673,2,400.0,Fell,1871,42.3,0.55,Diogenite,Achondrite,Stony,11
+5833,2,3600.0,Found,1863,37.75,-90.5,Iron IC,Achondrite,Iron,11
+5834,2,244500.0,Found,1888,37.96667,-90.31667,Iron IIIF,Achondrite,Iron,11
+5850,2,4180.0,Fell,1913,35.66667,136.3,Iron,Achondrite,Iron,11
+5891,2,1631.0,Found,1950,27.33333,-112.33333,Main Group,Achondrite,Stony-Iron,14
+5913,2,18.54,Found,2002,40.86217,-118.54167,Iron IIAB,Achondrite,Iron,11
+5919,2,1344.0,Found,1999,20.996,57.32583,Shergottite,Achondrite,Stony,11
+5922,2,8579.0,Found,1999,20.9805,57.319,Shergottite,Achondrite,Stony,11
+5965,2,436.0,Found,2000,20.974,57.32083,Shergottite,Achondrite,Stony,11
+6004,2,94.84,Found,2002,21.0,57.32,Shergottite,Achondrite,Stony,11
+6034,2,75.0,Found,2002,21.00333,57.32167,Shergottite,Achondrite,Stony,11
+6039,2,31.7,Found,2003,21.00667,57.32167,Shergottite,Achondrite,Stony,11
+6044,2,278.5,Found,2004,21.00333,57.31833,Shergottite,Achondrite,Stony,11
+6064,2,107.7,Found,2002,20.99203,57.31992,Shergottite,Achondrite,Stony,11
+6078,2,206.45,Found,2002,20.57318,57.32333,Lunar,Achondrite,Stony,11
+6184,2,10000.0,Found,1867,36.76667,-86.16667,Iron IIAB,Achondrite,Iron,11
+6219,2,1800.0,Fell,1923,-8.38333,-36.76667,Eucrite,Achondrite,Stony,16
+6227,2,323300.0,Found,1967,62.9,152.43333,Main Group,Achondrite,Stony-Iron,8
+6228,2,25900.0,Found,1940,37.2375,-92.78694,Iron IAB,Achondrite,Iron,11
+6238,2,4000.0,Fell,1850,23.1,87.3,Diogenite,Achondrite,Stony,1
+6239,2,4650.0,Found,1936,33.7,-101.93333,Aubrite,Achondrite,Stony,1
+6247,2,5000.0,Fell,1865,24.55,84.83333,Shergottite,Achondrite,Stony,1
+6253,2,22700.0,Found,1890,36.7,137.36667,Iron IVA,Achondrite,Iron,11
+6320,2,1600.0,Found,1907,-33.85,18.95,Mesosiderite,Achondrite,Stony-Iron,1
+6327,2,14180.0,Found,1847,18.31667,73.91667,Ungrouped,Achondrite,Stony-Iron,1
+6329,2,4100.0,Fell,1933,42.58333,-103.66667,Eucrite,Achondrite,Stony,2
+6361,2,12870.0,Found,2000,26.68333,-11.73333,Eucrite,Achondrite,Stony,11
+6363,2,5000.0,Found,1839,37.13333,-88.4,Iron IVA,Achondrite,Iron,11
+6366,2,70500.0,Found,1840,35.98333,-85.85,Iron IAB,Achondrite,Iron,11
+6377,2,11800.0,Found,1919,32.18333,-97.8,Main Group,Achondrite,Stony-Iron,1
+6381,2,3700.0,Found,1938,34.03333,-95.58333,Iron,Achondrite,Iron,11
+6385,2,2500.0,Found,1893,41.65,-86.21667,Main Group,Achondrite,Stony-Iron,1
+6397,2,67600.0,Found,1931,52.0,-108.3,Main Group,Achondrite,Stony-Iron,1
+6401,2,52000.0,Fell,1808,49.28333,15.56667,Eucrite,Achondrite,Stony,1
+6404,2,43500.0,Found,1869,38.21667,-79.05,Iron IIIE,Achondrite,Iron,11
+6555,2,2500.0,Found,1994,28.5,-106.25,Iron IIE,Achondrite,Iron,11
+6556,2,2500.0,Found,1994,28.5,-106.25,Iron IIE,Achondrite,Iron,11
+6557,2,2500.0,Found,1994,28.5,-106.25,Iron IIE,Achondrite,Iron,11
+6558,2,2500.0,Found,1994,28.5,-106.25,Iron IIE,Achondrite,Iron,11
+6559,2,2500.0,Found,1994,28.5,-106.25,Iron IIE,Achondrite,Iron,11
+6560,2,2500.0,Found,1994,28.5,-106.25,Iron IIE,Achondrite,Iron,11
+6561,2,2500.0,Found,1994,28.5,-106.25,Iron IIE,Achondrite,Iron,11
+6562,2,2500.0,Found,1994,28.5,-106.25,Iron IIE,Achondrite,Iron,11
+6569,2,12000.0,Fell,1931,32.95,10.41667,Diogenite,Achondrite,Stony,14
+6575,2,27000.0,Found,1853,36.43333,-83.75,Iron IAB,Achondrite,Iron,11
+6631,2,260000.0,Found,1965,34.25,-96.68333,Iron,Achondrite,Iron,11
+6663,2,150000.0,Found,1992,29.47,-105.8,Iron,Achondrite,Iron,11
+6729,2,6800.0,Found,1853,34.75,-84.0,Iron IC,Achondrite,Iron,11
+6738,2,72500.0,Found,1992,-14.53333,-48.76667,Iron IAB,Achondrite,Iron,11
+6740,2,44000.0,Found,1992,56.38333,120.46667,Iron IAB,Achondrite,Iron,11
+6749,2,3828000.0,Found,1861,-25.75,-70.5,Mesosiderite,Achondrite,Stony-Iron,13
+6768,2,54000.0,Fell,1880,35.33333,51.63333,Mesosiderite,Achondrite,Stony-Iron,1
+6780,2,34360.0,Found,1991,39.73633,-96.36133,Ungrouped,Achondrite,Stony-Iron,11
+6782,2,750.0,Fell,1949,57.8,45.8,Eucrite,Achondrite,Stony,1
+6789,2,470.0,Found,1992,61.03333,6.05,Eucrite,Achondrite,Stony,11
+6800,2,1303.8,Fell,1997,16.83333,80.75,Eucrite,Achondrite,Stony,11
+6814,2,13600.0,Found,1887,36.63333,-83.83333,Iron IAB,Achondrite,Iron,11
+6827,2,225.0,Fell,1939,45.58333,-122.35,Howardite,Achondrite,Stony,11
+6868,2,1750.0,Found,1890,35.0,-94.0,Iron IVA,Achondrite,Iron,11
+6873,2,11.7,Found,1999,35.85667,-114.22333,Mesosiderite,Achondrite,Stony-Iron,11
+6896,2,11700.0,Found,1995,-38.10306,146.18111,Iron,Achondrite,Iron,11
+6904,2,24000.0,Found,1928,35.2,-111.4,Winonaite,Achondrite,Stony,13
+6916,2,3867.0,Found,1918,35.68333,-82.18333,Iron IVA,Achondrite,Iron,11
+6965,2,1472.0,Fell,1936,47.31667,35.36667,Howardite,Achondrite,Stony,1
+6969,2,3000.0,Found,1919,35.0,-94.75,Iron IAB,Achondrite,Iron,11
+6971,2,300.0,Found,1999,27.33333,-9.33333,Winonaite,Achondrite,Stony,11
+6972,2,18000.0,Fell,1962,11.73333,7.08333,Shergottite,Achondrite,Stony,1
+6975,2,330.0,Fell,1898,33.7,133.8,Main Group,Achondrite,Stony-Iron,11
+6978,2,85000.0,Found,1998,25.00944,-100.75,Iron IAB,Achondrite,Iron,11
+6993,2,46.0,Found,1999,13.78333,8.96667,Ungrouped,Achondrite,Stony-Iron,11
+6995,2,246.0,Fell,1858,51.83333,26.83333,Howardite,Achondrite,Stony,10
+7013,2,68.0,Found,2002,27.48333,3.76667,Ureilite,Achondrite,Stony,11
+7032,2,243.0,Found,2000,38.46483,-105.7015,Iron IAB,Achondrite,Iron,11
+7093,2,4.57,Found,2003,19.32675,54.77512,Lunar,Achondrite,Stony,11
+7108,2,21.7,Found,2003,19.325,54.78167,Lunar,Achondrite,Stony,11
+7118,2,35.4,Found,2003,19.39667,54.55833,Lunar,Achondrite,Stony,11
+7119,2,21.6,Found,2003,19.39833,54.56333,Lunar,Achondrite,Stony,11
+7128,2,1063.0,Found,2004,19.75667,54.93667,Ureilite,Achondrite,Stony,11
+7156,2,5079.0,Found,2004,19.63033,55.11517,Ureilite,Achondrite,Stony,11
+7158,2,585.0,Found,1999,-20.9818,22.9766,Lunar,Achondrite,Stony,11
+7159,2,13500.0,Found,1999,-20.9818,22.9766,Lunar,Achondrite,Stony,11
+7194,2,65.0,Found,2002,28.23333,-7.88333,Eucrite,Achondrite,Stony,11
+7206,2,420.0,Found,2004,20.17,56.265,Ureilite,Achondrite,Stony,11
+7251,2,172.0,Found,1990,29.037,17.0185,Eucrite,Achondrite,Stony,11
+7253,2,93.0,Found,2003,18.20417,54.05667,Acapulcoite,Achondrite,Stony,11
+7293,2,186.0,Found,2005,19.194833,54.918417,Ureilite,Achondrite,Stony,11
+7303,2,501.0,Found,2005,19.218111,54.917417,Ureilite,Achondrite,Stony,11
+7306,2,115.2,Found,2005,18.91444,54.345,Lunar,Achondrite,Stony,11
+7314,2,42.0,Found,2005,18.731389,54.509167,Diogenite,Achondrite,Stony,11
+7360,2,152.6,Found,2000,21.006556,57.334417,Lunar,Achondrite,Stony,11
+7369,2,586.0,Found,2000,32.73,-113.71,Iron IAB,Achondrite,Iron,11
+7370,2,198000.0,Found,1990,49.86667,46.61167,Main Group,Achondrite,Stony-Iron,11
+7373,2,1.77,Found,2002,35.236,-117.04212,Acapulcoite,Achondrite,Stony,11
+7378,2,124.0,Found,2000,30.46667,13.55,Lunar,Achondrite,Stony,11
+7379,2,180.0,Fell,2004,28.5475,-81.36222,Eucrite,Achondrite,Stony,11
+7380,2,1003000.0,Found,2000,44.43333,87.63333,Main Group,Achondrite,Stony-Iron,11
+7382,2,406.0,Found,2002,19.3025,54.555,Ureilite,Achondrite,Stony,11
+7383,2,898.0,Found,2005,18.42632,54.42865,Eucrite,Achondrite,Stony,11
+7405,2,23.9,Found,2005,18.91947,54.36237,Howardite,Achondrite,Stony,11
+7406,2,404.0,Found,2002,19.3025,54.555,Ureilite,Achondrite,Stony,11
+7450,2,6000.0,Found,2002,27.85,-7.8,Diogenite,Achondrite,Stony,11
+7451,2,54.0,Found,2004,27.98333,-7.58333,Eucrite,Achondrite,Stony,11
+7452,2,6.0,Found,2003,27.95,-7.83333,Eucrite,Achondrite,Stony,11
+7453,2,155.0,Found,2005,22.846044,55.121208,Ureilite,Achondrite,Stony,11
+7454,2,213.0,Found,2006,18.89067,54.33933,Lunar,Achondrite,Stony,11
+7466,2,579.0,Found,2005,20.31142,56.22532,Ureilite,Achondrite,Stony,11
+7469,2,30.92,Found,2005,20.06413,56.5339,Eucrite,Achondrite,Stony,11
+7512,2,355.11,Found,2002,19.9842,56.42707,Mesosiderite,Achondrite,Stony-Iron,11
+7513,2,155.94,Found,2002,19.98587,56.40808,Mesosiderite,Achondrite,Stony-Iron,11
+7514,2,502.22,Found,2002,19.98662,56.41728,Mesosiderite,Achondrite,Stony-Iron,11
+7515,2,1185.51,Found,2002,19.98715,56.4177,Mesosiderite,Achondrite,Stony-Iron,11
+7516,2,19.41,Found,2002,19.9875,56.41672,Mesosiderite,Achondrite,Stony-Iron,11
+7517,2,492.31,Found,2002,19.9867,56.41857,Mesosiderite,Achondrite,Stony-Iron,11
+7518,2,98.37,Found,2002,19.98662,56.41843,Mesosiderite,Achondrite,Stony-Iron,11
+7519,2,368.82,Found,2002,19.9814,56.41825,Mesosiderite,Achondrite,Stony-Iron,11
+7534,2,64.67,Found,2005,19.97578,56.42303,Mesosiderite,Achondrite,Stony-Iron,11
+7535,2,308.67,Found,2005,19.97493,56.4269,Mesosiderite,Achondrite,Stony-Iron,11
+7542,2,735.8,Found,2005,19.99988,56.41498,Mesosiderite,Achondrite,Stony-Iron,11
+7546,2,3.89,Found,2005,19.98037,56.41745,Mesosiderite,Achondrite,Stony-Iron,11
+7547,2,298.0,Found,2005,19.97973,56.41405,Mesosiderite,Achondrite,Stony-Iron,11
+7548,2,603.9,Found,2005,19.98552,56.41543,Mesosiderite,Achondrite,Stony-Iron,11
+7549,2,38.7,Found,2005,19.98547,56.41732,Mesosiderite,Achondrite,Stony-Iron,11
+7551,2,61.0,Found,2005,19.95952,56.42197,Mesosiderite,Achondrite,Stony-Iron,11
+7553,2,16.2,Found,2005,19.97622,56.42667,Mesosiderite,Achondrite,Stony-Iron,11
+7554,2,234.1,Found,2005,19.97675,56.42622,Mesosiderite,Achondrite,Stony-Iron,11
+7555,2,42.9,Found,2005,19.97708,56.42573,Mesosiderite,Achondrite,Stony-Iron,11
+7556,2,5.02,Found,2005,19.9743,56.42068,Mesosiderite,Achondrite,Stony-Iron,11
+7557,2,106.1,Found,2005,19.9767,56.42013,Mesosiderite,Achondrite,Stony-Iron,11
+7558,2,60.5,Found,2005,19.97703,56.41985,Mesosiderite,Achondrite,Stony-Iron,11
+7559,2,56.5,Found,2005,19.97873,56.4177,Mesosiderite,Achondrite,Stony-Iron,11
+7560,2,106.6,Found,2005,19.98118,56.41658,Mesosiderite,Achondrite,Stony-Iron,11
+7573,2,150.1,Found,2005,19.97362,56.41967,Mesosiderite,Achondrite,Stony-Iron,11
+7574,2,16005.5,Found,2005,19.9997,56.41108,Mesosiderite,Achondrite,Stony-Iron,11
+7624,2,487.26,Found,2002,20.0051,56.41193,Mesosiderite,Achondrite,Stony-Iron,11
+7625,2,18250.0,Found,2002,20.00552,56.41628,Mesosiderite,Achondrite,Stony-Iron,11
+7626,2,4194.0,Found,2002,20.00458,56.4212,Mesosiderite,Achondrite,Stony-Iron,11
+7721,2,17600.0,Found,2005,54.24028,-1.19889,Main Group,Achondrite,Stony-Iron,11
+7731,2,801.0,Found,1999,27.182,16.30017,Lunar,Achondrite,Stony,11
+7756,2,3000000.0,Found,2006,27.5,-12.5,Aubrite,Achondrite,Stony,11
+7761,2,49.8,Found,1999,27.03583,16.38528,Ureilite,Achondrite,Stony,11
+7774,2,212.8,Found,2006,30.31708,-4.94288,Angrite,Achondrite,Stony,11
+7801,2,89.0,Found,2006,18.53778,54.18778,Eucrite,Achondrite,Stony,11
+7806,2,24.2,Found,2004,18.42333,54.42333,Lunar,Achondrite,Stony,11
+7807,2,46200.0,Found,2002,19.983,56.41368,Mesosiderite,Achondrite,Stony-Iron,11
+7827,2,50.47,Found,2006,19.623717,55.72825,Diogenite,Achondrite,Stony,11
+7908,2,16.5,Found,2006,21.04,57.315,Lunar,Achondrite,Stony,11
+7926,2,2480.0,Found,2006,17.58333,54.35,Main Group,Achondrite,Stony-Iron,11
+7941,2,15600.0,Found,2002,-25.0,-69.5,Iron IAB,Achondrite,Iron,11
+7943,2,5.92,Found,2006,32.73458,-2.95797,Lunar,Achondrite,Stony,11
+7948,2,500.0,Fell,2007,39.35,-3.51667,Eucrite,Achondrite,Stony,11
+7949,2,360.0,Found,1992,50.65,-109.9,Iron IAB,Achondrite,Iron,11
+7950,2,27420.0,Found,1994,33.81667,-100.51667,Iron IVB,Achondrite,Iron,11
+7955,2,30.1,Found,1999,31.59391,-111.37023,Eucrite,Achondrite,Stony,11
+7960,2,6800.0,Fell,2006,25.14333,75.81333,Iron IIE,Achondrite,Iron,11
+7961,2,6800.0,Fell,2006,25.14333,75.81333,Iron IIE,Achondrite,Iron,11
+7962,2,6800.0,Fell,2006,25.14333,75.81333,Iron IIE,Achondrite,Iron,11
+7963,2,6800.0,Fell,2006,25.14333,75.81333,Iron IIE,Achondrite,Iron,11
+7964,2,6800.0,Fell,2006,25.14333,75.81333,Iron IIE,Achondrite,Iron,11
+7965,2,6800.0,Fell,2006,25.14333,75.81333,Iron IIE,Achondrite,Iron,11
+7966,2,6800.0,Fell,2006,25.14333,75.81333,Iron IIE,Achondrite,Iron,11
+7967,2,6800.0,Fell,2006,25.14333,75.81333,Iron IIE,Achondrite,Iron,11
+7969,2,5132.0,Found,2003,18.58333,54.455,Eucrite,Achondrite,Stony,11
+7970,2,960.0,Fell,2004,40.30583,-105.02325,Eucrite,Achondrite,Stony,11
+7976,2,2768.0,Found,2003,-29.35,121.76667,Iron,Achondrite,Iron,11
+7978,2,73300.0,Found,2007,29.65225,-7.7493,Mesosiderite,Achondrite,Stony-Iron,11
+7984,2,292.0,Found,2003,32.133333,-82.983333,Ungrouped,Achondrite,Stony-Iron,11
+7985,2,2100.0,Found,2002,32.95,-114.666667,Howardite,Achondrite,Stony,11
+7986,2,57.2,Found,2008,18.604167,53.914667,Lunar,Achondrite,Stony,11
+7993,2,30.0,Found,2003,18.33833,54.205,Eucrite,Achondrite,Stony,11
+7994,2,267.8,Found,2003,18.436,54.48383,Achondrite,Achondrite,Stony,11
+7995,2,106.5,Found,2005,19.29167,54.57333,Lunar,Achondrite,Stony,11
+7997,2,18.4,Found,2006,19.53367,55.11883,Lunar,Achondrite,Stony,11
+8005,2,153.278,Found,2002,19.97568,56.41903,Mesosiderite,Achondrite,Stony-Iron,11
+8006,2,341.0,Found,2006,19.6802,56.61008,Eucrite,Achondrite,Stony,11
+8007,2,980.0,Found,2006,19.68578,56.62402,Eucrite,Achondrite,Stony,11
+8011,2,283.604,Found,2007,19.67678,56.60392,Eucrite,Achondrite,Stony,11
+8012,2,529.639,Found,2007,19.68598,56.6227,Eucrite,Achondrite,Stony,11
+8024,2,61.5,Found,2007,19.83928,56.47937,Ureilite,Achondrite,Stony,11
+8026,2,160.32,Found,2007,19.92282,56.35117,Ureilite,Achondrite,Stony,11
+8085,2,5130.0,Found,2006,20.00803,56.39902,Mesosiderite,Achondrite,Stony-Iron,11
+8100,2,100.86,Found,2008,18.33633,53.3335,Lunar,Achondrite,Stony,11
+8103,2,324.0,Fell,2007,-31.35,129.19,Eucrite,Achondrite,Stony,11
+8107,2,147.0,Found,2004,32.5,-111.28,Iron IAB,Achondrite,Iron,11
+8130,2,3950.0,Fell,2008,20.74575,32.41275,Ureilite,Achondrite,Stony,11
+8135,2,10500.0,Found,2007,-14.83861,-40.83611,Iron IVA,Achondrite,Iron,11
+8141,2,57.7,Found,2003,19.16612,54.67243,Eucrite,Achondrite,Stony,11
+8142,2,27.6,Found,2003,19.16563,54.66998,Eucrite,Achondrite,Stony,11
+8143,2,2.5,Found,2003,19.16617,54.6703,Eucrite,Achondrite,Stony,11
+8144,2,4.1,Found,2003,19.16797,54.6722,Eucrite,Achondrite,Stony,11
+8145,2,79.4,Found,2003,19.16693,54.67182,Eucrite,Achondrite,Stony,11
+8146,2,4.8,Found,2003,19.16525,54.67247,Eucrite,Achondrite,Stony,11
+8147,2,12.2,Found,2003,19.16813,54.67157,Eucrite,Achondrite,Stony,11
+8148,2,15.7,Found,2003,19.16593,54.67237,Eucrite,Achondrite,Stony,11
+8149,2,3.9,Found,2003,19.16833,54.67155,Eucrite,Achondrite,Stony,11
+8150,2,25.7,Found,2003,19.16168,54.67452,Eucrite,Achondrite,Stony,11
+8152,2,21.048,Found,2008,23.31522,48.62988,Acapulcoite,Achondrite,Stony,11
+8182,2,553.0,Found,2008,19.78565,55.8535,Shergottite,Achondrite,Stony,11
+8189,2,3.8,Found,2008,19.97133,56.43006,Mesosiderite,Achondrite,Stony-Iron,11
+8190,2,31.9,Found,2008,19.97525,56.42839,Mesosiderite,Achondrite,Stony-Iron,11
+8191,2,2.9,Found,2008,19.97875,56.41939,Mesosiderite,Achondrite,Stony-Iron,11
+8193,2,40.5,Found,2008,19.97778,56.42361,Mesosiderite,Achondrite,Stony-Iron,11
+8194,2,15.8,Found,2008,19.97531,56.42192,Mesosiderite,Achondrite,Stony-Iron,11
+8197,2,30.9,Found,2008,19.96886,56.41678,Mesosiderite,Achondrite,Stony-Iron,11
+8200,2,325.0,Found,2008,19.98147,56.41744,Mesosiderite,Achondrite,Stony-Iron,11
+8296,2,28100.0,Found,1977,38.1995,-99.162,Aubrite,Achondrite,Stony,1
+8340,2,8.3,Found,2006,26.18667,25.45567,Acapulcoite,Achondrite,Stony,11
+8377,2,40.1,Found,2000,27.16917,16.13533,Shergottite,Achondrite,Stony,11
+8395,2,24370.0,Found,2007,22.79167,-3.96667,Diogenite,Achondrite,Stony,11
+8405,2,128.8,Found,2008,18.54908,53.97798,Lunar,Achondrite,Stony,11
+8529,2,216.0,Found,2005,30.928,-4.85833,Ureilite,Achondrite,Stony,11
+8531,2,35400.0,Found,2008,30.51667,-4.3,Iron IAB,Achondrite,Iron,11
+8532,2,41.0,Found,2004,44.93389,-116.43167,Iron IIAB,Achondrite,Iron,11
+8536,2,9300.0,Found,2003,32.24611,-99.99306,Iron IAB,Achondrite,Iron,11
+8545,2,2800.0,Found,2009,18.53333,54.13333,Ureilite,Achondrite,Stony,11
+8565,2,266.2,Found,2009,20.89607,56.92607,Ureilite,Achondrite,Stony,11
+8570,2,1962.0,Found,2009,20.47678,55.52788,Diogenite,Achondrite,Stony,11
+8663,2,1435.43,Found,2009,20.7658,55.43587,Brachinite,Achondrite,Stony,11
+8695,2,699.0,Found,2004,33.01222,-114.86667,Ureilite,Achondrite,Stony,11
+8697,2,1600000.0,Found,2009,22.01833,26.08778,Iron,Achondrite,Iron,11
+8709,2,466.0,Found,2010,19.78483,55.95917,Eucrite,Achondrite,Stony,11
+8711,2,200000.0,Found,2005,-30.03306,-51.23,Iron IIIE,Achondrite,Iron,11
+8713,2,2000000.0,Found,1992,-14.258,-49.15917,Iron,Achondrite,Iron,11
+8813,2,212.0,Found,2006,20.9645,56.72033,Ureilite,Achondrite,Stony,11
+8861,2,160.0,Found,2009,32.07667,-109.8455,Mesosiderite,Achondrite,Stony-Iron,11
+8868,2,134.0,Found,2009,20.53333,57.3,Achondrite,Achondrite,Stony,11
+8894,2,243.0,Found,2000,19.91667,56.25,Diogenite,Achondrite,Stony,11
+8896,2,4.5,Found,2007,19.97722,56.42527,Mesosiderite,Achondrite,Stony-Iron,11
+8897,2,5525.0,Found,2006,18.56667,53.83333,Lunar,Achondrite,Stony,11
+8910,2,28.4,Found,1999,27.42767,16.1655,Ureilite,Achondrite,Stony,11
+8911,2,305.0,Found,2007,27.38,16.469,Eucrite,Achondrite,Stony,11
+8937,2,499500.0,Found,2008,-6.6,110.73333,Main Group,Achondrite,Stony-Iron,11
+8940,2,25.3,Found,2011,19.00756,55.17469,Ureilite,Achondrite,Stony,11
+8941,2,17000.0,Found,2006,40.266667,-94.683333,Main Group,Achondrite,Stony-Iron,11
+8943,2,388.0,Found,2008,18.46117,54.36633,Ureilite,Achondrite,Stony,11
+8949,2,154.0,Found,2006,18.45333,54.16667,Ureilite,Achondrite,Stony,11
+8956,2,4400.0,Found,2002,19.26667,5.91667,Iron IVA,Achondrite,Iron,11
+8997,2,208.0,Found,2011,24.64283,-14.68783,Lunar,Achondrite,Stony,11
+8998,2,223.0,Found,2006,18.3115,54.12833,Eucrite,Achondrite,Stony,11
+8999,2,36.6,Found,2008,19.65715,55.58987,Howardite,Achondrite,Stony,11
+9024,2,538.0,Found,2010,32.80625,9.83283,Shergottite,Achondrite,Stony,11
+9025,2,8000.0,Found,2011,28.002467,-11.131583,Shergottite,Achondrite,Stony,11
+9036,2,3000000.0,Found,2004,36.3,120.48333,Iron IAB,Achondrite,Iron,11
+9038,2,160000.0,Found,2003,43.75,92.91667,Iron,Achondrite,Iron,11
+9075,2,1815.0,Found,1998,27.375,16.184,Lunar,Achondrite,Stony,11
+9076,2,73.0,Found,2009,-24.7,-69.75,Diogenite,Achondrite,Stony,11
+9077,2,86.1,Found,2010,19.01075,54.53743,Lunar,Achondrite,Stony,11
+9087,2,7000.0,Fell,2011,29.48195,-7.61123,Shergottite,Achondrite,Stony,11
+9096,2,2.51,Found,2007,18.46,54.058,Lunar,Achondrite,Stony,11
+9097,2,9162.0,Found,2002,50.43845,-95.52937,Iron IAB,Achondrite,Iron,11
+9103,2,42.6,Found,2009,19.3895,54.467,Lunar,Achondrite,Stony,11
+9104,2,213.2,Found,2009,18.46883,54.17483,Lunar,Achondrite,Stony,11
+9135,2,25.7,Found,2007,19.9991,56.41118,Mesosiderite,Achondrite,Stony-Iron,11
+9292,2,36.54,Found,2010,-31.39953,127.14467,Lunar,Achondrite,Stony,11
+9293,2,1780.0,Found,2002,-31.45278,127.8905,Howardite,Achondrite,Stony,11
+9297,2,12.1,Found,1992,-26.21667,122.5,Eucrite,Achondrite,Stony,11
+9333,2,32.4,Found,2011,20.39561,56.63589,Eucrite,Achondrite,Stony,11
+9336,2,6.1,Found,2011,18.322,54.148,Shergottite,Achondrite,Stony,11
+9342,2,1411.8,Found,2010,22.74868,55.47218,Achondrite,Achondrite,Stony,11
+9344,2,406.8,Found,2010,21.12637,55.52612,Eucrite,Achondrite,Stony,11
+9358,2,5026.0,Found,2010,20.0049,56.40473,Mesosiderite,Achondrite,Stony-Iron,11
+9363,2,70.3,Found,2010,20.41705,56.27492,Ureilite,Achondrite,Stony,11
+9384,2,438.0,Found,1988,-30.573,128.56367,Eucrite,Achondrite,Stony,2
+9387,2,890.0,Found,2009,18.4517,54.20653,Ureilite,Achondrite,Stony,11
+9391,2,3.3,Found,2010,18.425,54.158,Lunar,Achondrite,Stony,11
+9395,2,4800.0,Found,2005,50.00957,-95.38537,Iron IAB,Achondrite,Iron,11
+9399,2,218000.0,Found,2006,26.06,118.01,Mesosiderite,Achondrite,Stony-Iron,11
+9400,2,2290.0,Found,2009,22.83333,-6.18333,Diogenite,Achondrite,Stony,11
+9402,2,43000.0,Found,2005,29.85167,111.59833,Iron IIAB,Achondrite,Iron,11
+9408,2,3180.0,Found,1999,-25.20467,-69.82858,Iron IVB,Achondrite,Iron,11
+9413,2,15.1,Found,2011,18.71122,54.160306,Lunar,Achondrite,Stony,11
+9416,2,49.2,Found,2010,18.317,54.202,Shergottite,Achondrite,Stony,11
+9513,2,37.5,Found,2010,-25.23333,-69.71667,Mesosiderite,Achondrite,Stony-Iron,11
+9521,2,207.0,Found,2010,27.23017,16.48833,Ureilite,Achondrite,Stony,11
+9523,2,168.0,Found,2004,18.259,54.02947,Eucrite,Achondrite,Stony,11
+9525,2,788.4,Found,2012,22.94781,-13.38527,Eucrite,Achondrite,Stony,11
+9590,2,310.0,Found,2010,26.9195,16.657,Eucrite,Achondrite,Stony,11
+9703,2,1724.8,Found,1950,34.21,-101.39,Main Group,Achondrite,Stony-Iron,13
+9887,2,272.75,Found,2010,26.707,-12.759,Eucrite,Achondrite,Stony,11
+9889,2,100000.0,Found,2000,31.98457,-5.51528,Iron IIAB,Achondrite,Iron,11
