@@ -1,0 +1,51 @@
+The final presentations will be
+NCE : August 9 - 10
+NCW : August 11
+
+Your final presentation will be submitted to NGA College by August 5th (Thursday) so they can be moved to high-side and pooled for presentations.
+
+Presentation Length - Approximately 20 minutes.
+
+The expected delivery is in-person for all NCE and NCW students.
+
+The sessions will be on high-side VTC.
+Remote students (Denver, Hawaii, Japan) will be set up to call, and we will drive the slides locally.
+
+The final presentation strongly suggested flow is
+    •	Self Introduction, possible Mentor Introduction
+    •	Context / Background for your project
+    •	Opportunity for Data Science to help within the Context/Background
+    •	Data Details (details, but < 5min)
+    •	Achievements of your project (your best highlights, outcomes) any combo of
+        o	Visualization (potential dash board screen shots or data insights)
+        o	ML Models (Predictive  or datamining)  
+            	remember to contextualize predictive results as ReSub, Train/Test Split, or Cross Validation  -  "70/30 train test split"
+        Cherry pick the good stuff.
+    o	performance/insights/gains
+        •	Future Steps or Opportunities
+            Things I know now.  Can be - I know now that I would do it this way instead."
+
+Other aspects:
+Technical Report will be Due by August 14th, after presentations (last day of PSDS Contract).
+Suggested composition of technical report:
+    •	Presentation "Context/Backgorund + Opportunity for Data Science" in paragraph form.
+    •	Deliverable 1 (completed April 2)
+    •	Deliverabe 2 (complteed June 11)
+    •	Presentation "Future Opportunites" in paragraph form.
+
+
+Figures are encouraged.
+
+How Dr. Scott does it:  read abstract, read figure captions, if it's interesting, read it, if not give it to a grad student.
+
+word or PDF
+
+MU paperwork for MS or grad Cert options will be handled in the weeks after Capstone completes.
+
+
+
+Highlight TDOC
+    if using it here, what extra info would you need?  Data ga-ps
+    Simplifying is a good step (like taking E4-6 down to E)
+    Clustering, make sure to normalize all columns and make sure all features have a difference.
+    Get rid of weighting?
