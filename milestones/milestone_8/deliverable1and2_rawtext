@@ -1,0 +1,148 @@
+Technical Report will be Due by August 14th, after presentations (last day of PSDS Contract).
+Suggested composition of technical report:
+    •	Presentation "Context/Backgorund + Opportunity for Data Science" in paragraph form.
+    •	Deliverable 1 (completed April 2)
+    •	Deliverabe 2 (complteed June 11)
+    •	Presentation "Future Opportunites" in paragraph form.
+
+
+Deliverable 1
+
+
+This study aims to investigate a dataset of meteorites that have been located and
+identified throughout human history. The initial data set included 45,716 individual
+meteorite-like objects. For the initial exploratory analysis, please view my Jupyter
+Notebook at:
+
+https://github.com/mwy912/capstone/blob/main/Data_analysis_and_cleanup_R.ipynb
+
+I imported the database and began working to clean the data. My first step was to
+convert the year column into an actual year, as it was recorded as a timestamp at 12
+am on January 1 of the year that it was collected. Then I renamed a few columns to be
+more informative to what they contained. One attribute of interest was nametype, which
+could either be “valid” or “relict” — the latter indicating that the object was later
+discovered not to be a meteorite. These 75 relicts the first items I removed from the
+dataset.
+
+The next area I focused on was the latitude and longitude. I noticed there was a
+meteorite listed with a longitude of 354 degrees. This made little sense until I
+investigated and found this was a rock found on the surface of Mars, and was only there
+as a comparison to meteorites of Martian origin. I removed that one datapoint. I
+followed this up with the removal of 6,214 datapoints that were geolocated at (0,0) and
+would be of no use to trying to determine the location these objects impacted or were
+found. This left me with 31,892 datapoints.
+
+Continuing to browse the data, I noticed that 4,761 data points all were located at
+(-71.5,35.67) which seems unlikely. After noting similar areas with likely bad
+geocoordinates, I decided to focus only on meteorites found between the Arctic Circle
+and Antarctic Circle. This removed an additional 22,111 meteorites, and left me with
+9,781 meteorites to use in my analysis. Here is a basic graphic of the locations of those
+9,781 meteorites:
+
+
+
+I next wanted to fill in any NAs. There were 67 meteorites without a mass given. I
+found the median (because of several large meteorite finds, the mean was very
+skewed) and filled in that value for the masses. For the 149 events without a year, I
+took the mean year of the dataset.
+
+My next task was to begin a preliminary statistical analysis.
+https://github.com/mwy912/capstone/blob/main/Prelim_statistics_py.ipynb
+I looked at just getting counts of meteorites. First dividing up based on found or fell, I
+got:
+8,686 found, 1095 fell
+
+I next divided the meteorites into 5 categories based on size: Tiny (< 100g), small
+(100g - 1 kg), medium (1 kg - 5 kg), large (5 kg - 10 kg) and huge (greater that 10 kg).
+
+This was the breakdown:
+small 3937
+tiny 2533
+medium 1651
+huge 1202
+large 458
+
+Finally I looked at the descriptions in the “recclass” field. As you can see in the link,
+there are over 300 different recclasses, so I won’t post the entire count or table here.
+Here is the pie chart:
+
+In the Jupyter Notebook at the link, you can see a horizontal bar chart as well as the full
+table of counts for this graph.
+
+As an assessment of the suitability of machine learning and statistical modeling, I
+believe that, in order to perform this work, one area I need to tackle is this recclass
+category. These are far too many categories, and many of them are very similar. Once
+I can find a better classification system, I will be able to begin modeling and machine
+learning to begin predicting how often certain types of meteorites will impact and where
+they will fall.
+
+
+
+
+
+
+Deliverable 2
+
+The last milestone ended with my plan to come up with some formula or way to weigh the land cover and urban areas.
+
+My process began by finding which meteorite impacts were relatively close to urbanized areas.
+
+https://github.com/mwy912/capstone/blob/main/08_proximity%20analysis_R.ipynb
+
+I created a buffer of .25 degrees around every meteorite impact, and found which cities in the dataset intersected those buffers.  Then I found the year closest to the impact and recorded the population of that city and the year of the data.
+
+The results of this process is here: https://github.com/mwy912/capstone/blob/main/data/results/meteorites_population.csv
+
+For the Landcover analysis, I began by finding what the raster values were for the location of every meteorite impact. 
+
+https://github.com/mwy912/capstone/blob/main/05b_Landcover_Analysis_R.ipynb  
+
+With a loop process, I found which raster was the latest before the impact and kept that value.  The results of that process is a table located here:  https://github.com/mwy912/capstone/blob/main/data/results/meteorites_landcover.csv
+
+
+I next brought all three tables together - the meteorites, the urban areas near impacts, and the landcover values of the impacts.
+
+https://github.com/mwy912/capstone/blob/main/09_Synthesis_R.ipynb
+
+I found that only 239 meteorites were near an urban area, out of almost 10000.  I felt this was not significant and would be covered by landcover analysis. 
+
+For Landcover, the way I determined to weight it was to total the LCs for the meteorites, and compare that to the LC of the entire earth.  For example, Temperate Deciduous Forest (LC = 11) makes up 69% of all the meteorite impact locations.  However, looking at the raster of the entire earth, Temperate Deciduous Forest makes up only 0.33% of the earth’s surface.
+
+By dividing .33%/69%, I assigned a weight to all 11’s in the dataset.  I did the same thing for the other land covers.  This table was then joined back to the meteorites.  Here is that file: https://raw.githubusercontent.com/mwy912/capstone/main/data/results/meteorites_weighted.csv.
+
+To begin this stage of my analysis, located here, https://github.com/mwy912/capstone/blob/main/10_Starting%20Analysis_R.ipynb
+
+I used the weighted meteorites table, and converted recclass, fell_or_found, group+name, Chondrite or Achondrite, type, Level 3 and Level 4 and the LC_sample value into factors.  I divided the data set into two:  One of everything, and one of only the falls.  This allowed me to test correlations to the year of impact, since we can be sure of the date of impact on these.
+
+I ran one way ANOVAs against each of the factors as well as a two way ANOVA against Latitude and longitude.  The null hypothesis was rejected for the following comparisons:
+
+•	year ~ chondrite
+•	year ~ group
+•	mass ~ year
+•	mass ~ chondrite
+•	mass ~ group
+•	mass ~ type
+•	mass ~ latitude*longitude.
+
+My next step was to divide both “all” and “all falls” into training and testing datasets.  The procedure is located here:  
+
+https://github.com/mwy912/capstone/blob/main/11_Train_and_test_R.ipynb
+
+Looking ahead, I want to perform predictive analysis using these two datasets.  I will continue to keep you updated on any developments.
+
+In response to my last milestone, John suggested I reflect on my original proposal and compare it to make sure I’m answering the question I set out to answer and what tweaks might be necessary.  I want to return to the five questions I asked in milestone 2:
+
+
+
+  - Do meteorites fall at random or are there patterns to their impact locations?  Either as a whole or by class of meteorite or some other parameter.
+ 
+  - Are the numbers of meteorite falls consistent over history or are they changing?
+ 
+  - Is there any connection to human population? - i.e. more falls recorded because more people to see it, more finds because people are in the area.
+ 
+  - Are there trends between meteorites that have been observed hitting the ground and ones that are found?
+ 
+  - Can predictions be made about future meteorite impacts by studying past impact events?
+
+
+I would say that I have not yet answered any of these questions, but I am definitely working towards them.  This was a good reminder to prevent “mission creep” and to make sure that I am not taking on new or different problems than I set out in the beginning.
