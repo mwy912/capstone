@@ -20,8 +20,20 @@ options(scipen=999)
 
 #All Meteorites
 meteorites <- read.csv(file='data/results/meteorites_lc.csv')
-meteorites <- meteorites[, c(3,7,8,6,10,9,18,13:16,12,5)]
-colnames(meteorites) <- c('Name','Fell_or_Found','Year', 'Mass', 'longitude', 'latitude', 'Land_Cover', 'Chondrite', 'Type', 'Level_3', 'Level_4', 'Group','recclass')
+meteorites <- meteorites[, c(2:14)]
+colnames(meteorites) <- c('Name',
+                          'Fell_or_Found',
+                          'Year',
+                          'Mass',
+                          'longitude',
+                          'latitude',
+                          'Land_Cover',
+                          'Chondrite',
+                          'Type',
+                          'Level_3', 
+                          'Level_4', 
+                          'Group',
+                          'recclass')
 
 #Prob Density Function Land Cover
 pdf <- read.csv(file = 'data/results/pdf.csv')
@@ -114,7 +126,7 @@ gsfellfound <- read.csv("data/results/gridsquarefellfound.csv")
 
 #Correlation
 meteorites_corr <- read.csv(file='data/results/all.csv')
-meteorites_corr<-subset(meteorites_corr, select=-c(1,2,3,5,9,10,11,12,13,15))
+meteorites_corr <-subset(meteorites_corr, select=-c(1,2,3,5,9,10,11,12,13,15))
 
 corrlist <- list( "Mass"       = "mass",
                   "Year"       = "year",
@@ -124,6 +136,19 @@ corrlist <- list( "Mass"       = "mass",
 
 #KModes
 kmodes <- read.csv(file='data/results/meteorites_clustered.csv')
+kmodes <-subset(kmodes, select=-c(1))
+
+#Bonus
+meteorites_full <- read.csv(file='data/results/full_dataset.csv')
+meteorites_full <- meteorites_full[, c(2,4,7,8,6,10,9,5)]
+colnames(meteorites_full) <- c('Name',
+                               'Valid',
+                               'Fell_or_Found',
+                               'Year',
+                               'Mass',
+                               'longitude',
+                               'latitude',
+                               'recclass')
 
 
 #UI
@@ -134,10 +159,37 @@ ui <- fluidPage(
     
     fluidRow(
           tabsetPanel(
+             tabPanel("About",
+                        sidebarLayout(
+                            sidebarPanel(
+                               h1("Meteorite Data Analysis"),
+                               h2("Visualizations by Matthew Younce"),
+                               h3("PSDS Capstone")),
+                            mainPanel(
+                               p(),
+                                p("This analysis has been performed on a dataset of meteorites from the Meteoritical Society via NASA."),
+                               div("Here is a brief description of what you will find in each tab."),
+                               hr(),
+                               h4("Tab 1: About"),
+                               div("Me telling you this."),   
+                               h4("Tab 2: Meteorite Data"),
+                               div("This tab shows a map and table of the meteorite data after data scrubbing was complete."),
+                               h4("Tab 3: KModes Clustering"),
+                               div("This is the results of an unsupervised clustering.  KModes clustering is similar to KMeans clustering, except it is for categorical data."),
+                               h4("Tab 4: Land Cover PDFs"),
+                               div("This shows how likely a particular mass of meteorite is for a given land cover type. If the peak is more to the left, its more likely a meteorite in that land cover type will be less massive."),
+                               h4("Tab 5: Falls over Time"),
+                               div("This is an attempt to see if there is any change in the rate of meteorites observed falling.  While the number has increased recently, this may be due to better record keeping rather than anything else."),
+                               h4("Tab 6: Falls vs. Finds"),
+                               div("This shows whether a 1°x1° grid square has seen a fall event, a find, or both."),
+                               h4("Tab 7: Correlation Tester"),
+                               div("This allows a comparison of numeric variables in the dataset."),
+                               h4("Tab 8: Full Dataset"),
+                               div("This is similar to Tab 2, except this is the full dataset from NASA without any data scrubbing.")
+                               ))),
               tabPanel("Meteorite Data",
                        sidebarLayout(
                           sidebarPanel(
-                              h3("Filters:"),
                               sliderInput("yearslider",
                                           label = "Year",
                                           min = 800, 
@@ -225,11 +277,36 @@ ui <- fluidPage(
                                            c(list("Variables" = corrlist)),
                                            selected = "lc_sample"))),
                  plotOutput("plot_chooseyourown"))),
-               tabPanel("About",
-                   div("Meteorite Data Analysis"),
-                   div("Visualizations by Matthew Younce"),
-                   div("PSDS Capstone"))
-
+              tabPanel("Full Dataset",
+                       sidebarLayout(
+                          sidebarPanel(
+                              sliderInput("bonusyearslider",
+                                          label = "Year",
+                                          min = 800, 
+                                          max = 2021,
+                                          step = 5,
+                                          value = c(800,2021),
+                                          sep=""),
+                              sliderInput("bonusmassslider",
+                                          label = "Mass (Kg)",
+                                          min = 0, 
+                                          max = 65000,
+                                          value = c(0,65000)),
+                              checkboxGroupInput(inputId = "bonusvalid",
+                                                 label = "Valid or Relict:",
+                                                 inline = TRUE,
+                                                 selected = c("Valid", "Relict"),
+                                                 choiceNames = c("Valid","Relict"),
+                                                 choiceValues = c("Valid", "Relict")),
+                              checkboxGroupInput(inputId = "bonusfellfoundcheckbox",
+                                                 label = "Fall or Find:",
+                                                 inline = TRUE,
+                                                 selected = c("Fell", "Found"),
+                                                 choiceNames = c("Observed Falling","Found later"),
+                                                 choiceValues = c("Fell", "Found"))),
+                       mainPanel(
+                           leafletOutput("bonusmeteoritemap"),
+                           dataTableOutput('bonusmeteorite_table'))))
           )
     )
 )
@@ -245,6 +322,10 @@ server <- function(input, output, session) {
                        meteoriteLCcheckbox = LC_names2,
                        corrvariable1 = "mass",
                        corrvariable2 = "lc_sample")
+                       bonusyearslider = c(800,2021)
+                       reac$bonusmassslider = c(0,65000)
+                       bonusfellfoundcheckbox = c("Fell", "Found")
+                       bonusvalid = c("Valid","Relict")
     
     observeEvent (input$yearslider, {
         reac$yearslider = input$yearslider
@@ -272,6 +353,28 @@ server <- function(input, output, session) {
         reac$corrvariable2 = input$corrvariable2
     })
     
+    
+    observeEvent (input$bonusyearslider, {
+        reac$bonusyearslider = input$bonusyearslider
+    })
+    observeEvent (input$bonusmassslider, {
+        reac$bonusmassslider = input$bonusmassslider *1000
+    })
+    observeEvent (input$bonusfellfoundcheckbox, {
+        reac$bonusfellfoundcheckbox = input$bonusfellfoundcheckbox
+    })
+    observeEvent (input$bonusvalid, {
+        reac$bonusvalid = input$bonusvalid
+    })
+
+
+    
+    
+    
+    
+    
+    
+    
     output$pdfplot = renderPlot({
         pdf_plot <- subset(pdfmelt, variable %in% input$pdfcheckbox)
         p <- ggplot()
@@ -283,7 +386,7 @@ server <- function(input, output, session) {
     
     output$meteorite_table = renderDataTable({
             map_meteorites <- meteorites
-            map_meteorites <- subset(meteorites, Fell_or_Found %in% reac$fellfoundcheckbox)
+            map_meteorites <- subset(map_meteorites, Fell_or_Found %in% reac$fellfoundcheckbox)
             map_meteorites <- map_meteorites[map_meteorites$Year >= reac$yearslider[1] & map_meteorites$Year <= reac$yearslider[2],]
             map_meteorites <- map_meteorites[map_meteorites$Mass >= reac$massslider[1] & map_meteorites$Mass <= reac$massslider[2],]
             map_meteorites <- subset(map_meteorites, Type %in% reac$typecheckbox)
@@ -294,14 +397,34 @@ server <- function(input, output, session) {
 
     output$meteoritemap = renderLeaflet({
             map_meteorites <- meteorites
-            map_meteorites <- subset(meteorites, Fell_or_Found %in% reac$fellfoundcheckbox)
+            map_meteorites <- subset(map_meteorites, Fell_or_Found %in% reac$fellfoundcheckbox)
             map_meteorites <- map_meteorites[map_meteorites$Year >= reac$yearslider[1] & map_meteorites$Year <= reac$yearslider[2],]
             map_meteorites <- map_meteorites[map_meteorites$Mass >= reac$massslider[1] & map_meteorites$Mass <= reac$massslider[2],]
             map_meteorites <- subset(map_meteorites, Type %in% reac$typecheckbox)
             map_meteorites <- subset(map_meteorites, Chondrite %in% reac$chondritecheckbox)
             map_meteorites <- subset(map_meteorites, Land_Cover %in% reac$meteoriteLCcheckbox)
 
-            map <- leaflet(map_meteorites) %>% addTiles() %>% addMarkers(clusterOptions = markerClusterOptions())
+            map <- leaflet(map_meteorites) %>% addTiles() %>% addMarkers(label = ~Name, clusterOptions = markerClusterOptions())
+            map
+    })
+    
+    output$bonusmeteorite_table = renderDataTable({
+            map_meteorites <- meteorites_full
+            map_meteorites <- map_meteorites[map_meteorites$Year >= reac$bonusyearslider[1] & map_meteorites$Year <= reac$bonusyearslider[2],]
+            map_meteorites <- map_meteorites[map_meteorites$Mass >= reac$bonusmassslider[1] & map_meteorites$Mass <= reac$bonusmassslider[2],]
+            map_meteorites <- subset(map_meteorites, Fell_or_Found %in% reac$bonusfellfoundcheckbox)
+            map_meteorites <- subset(map_meteorites, Valid %in% reac$bonusvalid)
+
+            map_meteorites})
+
+    output$bonusmeteoritemap = renderLeaflet({
+            map_meteorites <- meteorites_full
+            map_meteorites <- map_meteorites[map_meteorites$Year >= reac$bonusyearslider[1] & map_meteorites$Year <= reac$bonusyearslider[2],]
+            map_meteorites <- map_meteorites[map_meteorites$Mass >= reac$bonusmassslider[1] & map_meteorites$Mass <= reac$bonusmassslider[2],]
+            map_meteorites <- subset(map_meteorites, Fell_or_Found %in% reac$bonusfellfoundcheckbox)
+            map_meteorites <- subset(map_meteorites, Valid %in% reac$bonusvalid)
+
+            map <- leaflet(map_meteorites) %>% addTiles() %>% addMarkers(label = ~Name, clusterOptions = markerClusterOptions())
             map
     })
     
