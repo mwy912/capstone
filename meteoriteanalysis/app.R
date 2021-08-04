@@ -81,13 +81,13 @@ LC_names2  <- list("Boreal Forest",
                    "Wooded Tundra")
 
 #Timeline
-falls <- subset(meteorites, Fell_or_Found == 'Fell')
 worldpop <- read.csv("data/worldpop/worldpop.csv")
 worldpop <- worldpop %>% rename(pop = World.Population.over.12000.years..various.sources..2019..,
                                 year = Year)
 avg_worldpop <- worldpop %>% group_by(year) %>% summarize(avg=mean(pop))
 avg_worldpop <- as.data.frame(avg_worldpop)
 avg_worldpop <- avg_worldpop[avg_worldpop$year >= 800 & avg_worldpop$year <= 2013,]
+falls <- subset(meteorites, Fell_or_Found == 'Fell')
 fall_count <- count(falls, vars = Year)
 fall_count$decade <- floor(fall_count$vars/10)*10
 falls_decade <- aggregate(fall_count$n, by=list(Category=fall_count$decade), FUN=sum)
@@ -103,6 +103,29 @@ falls_decade <- falls_decade %>% rename(
     population = pop)
 falls_decade$falls_per_1M <- falls_decade$meteorite_falls/(falls_decade$population/1000000)
 falls_decade <- falls_decade[-c(44), ] 
+
+finds <- subset(meteorites, Fell_or_Found == 'Found')
+found_count <- count(finds, vars = Year)
+found_count$decade <- floor(found_count$vars/10)*10
+found_decade <- aggregate(found_count$n, by=list(Category=found_count$decade), FUN=sum)
+for (i in 1:nrow(found_decade)){
+    x <- found_decade$Category[i]
+    w <- avg_worldpop$year
+    closestVal = w[which.min(abs(w-x))]
+    pop <- avg_worldpop[avg_worldpop$year == closestVal,]$avg
+    found_decade$pop[i] <- pop}
+found_decade <- found_decade %>% rename(
+    decade = Category,
+    meteorite_finds = x,
+    population = pop)
+found_decade$finds_per_1M <- found_decade$meteorite_finds/(found_decade$population/1000000)
+found_decade <- found_decade[-c(30), ]
+fall_found_decade <- merge(falls_decade,found_decade, sort = TRUE, all=TRUE)
+fall_found_decade2 <-subset(fall_found_decade, select=-c(2))
+falls_pop <- na.omit(subset(fall_found_decade, select=-c(1,4,5,6)))
+nfalls_pop <- na.omit(subset(fall_found_decade, select=-c(1,3,5,6)))
+finds_pop <- na.omit(subset(fall_found_decade, select=-c(1,3,4,6)))
+nfinds_pop <- na.omit(subset(fall_found_decade, select=-c(1,3,4,5)))
 
 #Falls and Finds Gridsquares
 gsfellfound <- read.csv("data/results/gridsquarefellfound.csv")
@@ -153,60 +176,90 @@ ui <- fluidPage(
                              h4("Tab 1: About"),
                              div("This page."),
                              h4("Tab 2: Meteorite Data"),
-                             div("This tab shows a map and table of the meteorite data after data scrubbing was complete."),
+                             div("This tab shows a map and table of the meteorite data.  One subtab shows more detail after data scrubbing was complete, while the second subtab is the complete dataset from NASA."),
                              h4("Tab 3: KModes Clustering"),
                              div("This is the results of an unsupervised clustering.  KModes clustering is similar to KMeans clustering, except it is for categorical data."),
                              h4("Tab 4: Land Cover PDFs"),
                              div("This shows how likely a particular mass of meteorite is for a given land cover type. If the peak is more to the left, its more likely a meteorite in that land cover type will be less massive."),
-                             h4("Tab 5: Falls over Time"),
-                             div("This is an attempt to see if there is any change in the rate of meteorites observed falling.  While the number has increased recently, this may be due to better record keeping rather than anything else."),
+                             h4("Tab 5: Change over Time"),
+                             div("This shows if there is any change in the rate of meteorites observed falling and finds made as population increases over time."),
                              h4("Tab 6: Falls vs. Finds"),
                              div("This shows whether a 1°x1° grid square has seen a fall event, a find, or both."),
                              h4("Tab 7: Correlation Tester"),
-                             div("This allows a comparison of numeric variables in the dataset."),
-                             h4("Tab 8: Full Dataset"),
-                             div("This is similar to Tab 2, except this is the full dataset from NASA without any data scrubbing.")))),
+                             div("This allows a comparison of numeric variables in the dataset.")))),
             tabPanel("Meteorite Data",
-                     sidebarLayout(
-                         sidebarPanel(
-                             sliderInput("yearslider",
-                                          label = "Year",
-                                          min = 800, 
-                                          max = 2021,
-                                          step = 5,
-                                          value = c(800,2021),
-                                          sep=""),
-                             sliderInput("massslider",
-                                         label = "Mass (Kg)",
-                                         min = 0, 
-                                         max = 65000,
-                                         value = c(0,65000)),
-                             checkboxGroupInput(inputId = "fellfoundcheckbox",
-                                                label = "Fall or Find:",
-                                                inline = TRUE,
-                                                selected = c("Fell", "Found"),
-                                                choiceNames = c("Observed Falling","Found later"),
-                                                choiceValues = c("Fell", "Found")),
-                             checkboxGroupInput(inputId = "typecheckbox",
-                                                label = "Type of Meteorite:",
-                                                inline = TRUE,
-                                                selected = c("Stony","Stony-Iron","Iron","-"),
-                                                choiceNames = c("Stony","Stony-Iron","Iron","Unknown"),
-                                                choiceValues= c("Stony","Stony-Iron","Iron","-")),
-                             checkboxGroupInput(inputId = "chondritecheckbox",
-                                                label = "Chondrite or Achondrite:",
-                                                inline = TRUE,
-                                                selected = c("Chondrite","Achondrite","-"),
-                                                choiceNames = c("Chondrite","Achondrite","Unknown"),
-                                                choiceValues = c("Chondrite","Achondrite","-")),
-                             checkboxGroupInput(inputId = "meteoriteLCcheckbox",
-                                                label = "Land Cover at impact site:",
-                                                selected = LC_names2,
-                                                choiceNames = LC_names2,
-                                                choiceValues = LC_names2)),
-                         mainPanel(
-                             leafletOutput("meteoritemap"),
-                             dataTableOutput('meteorite_table')))),
+                     tabsetPanel(
+                         tabPanel("Scrubbed Data",
+                             sidebarLayout(
+                                 sidebarPanel(
+                                     sliderInput("yearslider",
+                                                  label = "Year",
+                                                  min = 800, 
+                                                  max = 2021,
+                                                  step = 5,
+                                                  value = c(800,2021),
+                                                  sep=""),
+                                     sliderInput("massslider",
+                                                 label = "Mass (Kg)",
+                                                 min = 0, 
+                                                 max = 65000,
+                                                 value = c(0,65000)),
+                                     checkboxGroupInput(inputId = "fellfoundcheckbox",
+                                                        label = "Fall or Find:",
+                                                        inline = TRUE,
+                                                        selected = c("Fell", "Found"),
+                                                        choiceNames = c("Observed Falling","Found later"),
+                                                        choiceValues = c("Fell", "Found")),
+                                     checkboxGroupInput(inputId = "typecheckbox",
+                                                        label = "Type of Meteorite:",
+                                                        inline = TRUE,
+                                                        selected = c("Stony","Stony-Iron","Iron","-"),
+                                                        choiceNames = c("Stony","Stony-Iron","Iron","Unknown"),
+                                                        choiceValues= c("Stony","Stony-Iron","Iron","-")),
+                                     checkboxGroupInput(inputId = "chondritecheckbox",
+                                                        label = "Chondrite or Achondrite:",
+                                                        inline = TRUE,
+                                                        selected = c("Chondrite","Achondrite","-"),
+                                                        choiceNames = c("Chondrite","Achondrite","Unknown"),
+                                                        choiceValues = c("Chondrite","Achondrite","-")),
+                                     checkboxGroupInput(inputId = 'meteoriteLCcheckbox',
+                                                        label = 'Land Cover at impact site:',
+                                                        selected = LC_names2,
+                                                        choices = LC_names2,
+                                                        inline = TRUE)),
+                                 mainPanel(
+                                     leafletOutput("meteoritemap"),
+                                     dataTableOutput('meteorite_table')))),
+                    tabPanel("Full Dataset",
+                             sidebarLayout(
+                                 sidebarPanel(
+                                     sliderInput("bonusyearslider",
+                                                 label = "Year",
+                                                 min = 800, 
+                                                 max = 2021,
+                                                 step = 5,
+                                                 value = c(800,2021),
+                                                 sep=""),
+                                     sliderInput("bonusmassslider",
+                                                 label = "Mass (Kg)",
+                                                 min = 0, 
+                                                 max = 65000,
+                                                 value = c(0,65000)),
+                                     checkboxGroupInput(inputId = "bonusvalid",
+                                                        label = "Valid or Relict:",
+                                                        inline = TRUE,
+                                                        selected = c("Valid", "Relict"),
+                                                        choiceNames = c("Valid","Relict"),
+                                                        choiceValues = c("Valid", "Relict")),
+                                     checkboxGroupInput(inputId = "bonusfellfoundcheckbox",
+                                                        label = "Fall or Find:",
+                                                        inline = TRUE,
+                                                        selected = c("Fell", "Found"),
+                                                        choiceNames = c("Observed Falling","Found later"),
+                                                        choiceValues = c("Fell", "Found"))),
+                                 mainPanel(
+                                     leafletOutput("bonusmeteoritemap"),
+                                     dataTableOutput('bonusmeteorite_table')))))),
             tabPanel("KModes Clustering",
                      sidebarLayout(
                          sidebarPanel(
@@ -227,14 +280,22 @@ ui <- fluidPage(
                                                          choiceNames = LC_names,
                                                          choiceValues = LC_values)),
                          mainPanel(plotOutput("pdfplot")))),
-            tabPanel("Falls over Time",
+            tabPanel("Changes over Time",
                      sidebarLayout(
                          sidebarPanel(
+                             radioButtons(inputId="yaxes",
+                                 label="Falls and finds on:",
+                                 selected = "y",
+                                 inline = TRUE,
+                                 choiceNames = c("one axis", "two axes"),
+                                 choiceValues = c("y","y2")),
                              checkboxInput(inputId = "norm_check",
                                            label = "Normalize?", 
                                            value = FALSE)),
                          mainPanel(dygraphOutput("timelineplot"),
-                                   plotOutput("timelinecorrplot")))),
+                                   fluidRow(
+                                       column(6,plotOutput("timelinecorrplot1")),
+                                       column(6,plotOutput("timelinecorrplot2")))))),
             tabPanel("Falls vs. Finds",
                      sidebarLayout(
                          sidebarPanel(
@@ -242,9 +303,10 @@ ui <- fluidPage(
                                                 label = "Display 1° x 1° squares with:",
                                                 inline = TRUE,
                                                 selected = c("fall", "find", "both"),
-                                                choiceNames = c("Falls Only (Red)", "Finds Only(Blue)", "Both (Green)"),
+                                                choiceNames = c("Falls Only", "Finds Only", "Both"),
                                                 choiceValues = c("fall", "find", "both"))),
                          mainPanel(leafletOutput("gsmap"),
+                                   plotOutput("gsplot"),
                                    div("Finds Only: 1063, Falls Only: 712, Both: 181")))),
             tabPanel("Correlation Tester",
                      fluidRow(
@@ -257,38 +319,8 @@ ui <- fluidPage(
                              selectInput("corrvariable2",
                                          "Select variable #2:",
                                          c(list("Variables" = corrlist)),
-                                         selected = "lc_sample"))),
-                         plotOutput("plot_chooseyourown"))),
-            tabPanel("Full Dataset",
-                     sidebarLayout(
-                         sidebarPanel(
-                             sliderInput("bonusyearslider",
-                                         label = "Year",
-                                         min = 800, 
-                                         max = 2021,
-                                         step = 5,
-                                         value = c(800,2021),
-                                         sep=""),
-                             sliderInput("bonusmassslider",
-                                         label = "Mass (Kg)",
-                                         min = 0, 
-                                         max = 65000,
-                                         value = c(0,65000)),
-                             checkboxGroupInput(inputId = "bonusvalid",
-                                                label = "Valid or Relict:",
-                                                inline = TRUE,
-                                                selected = c("Valid", "Relict"),
-                                                choiceNames = c("Valid","Relict"),
-                                                choiceValues = c("Valid", "Relict")),
-                             checkboxGroupInput(inputId = "bonusfellfoundcheckbox",
-                                                label = "Fall or Find:",
-                                                inline = TRUE,
-                                                selected = c("Fell", "Found"),
-                                                choiceNames = c("Observed Falling","Found later"),
-                                                choiceValues = c("Fell", "Found"))),
-                         mainPanel(
-                             leafletOutput("bonusmeteoritemap"),
-                             dataTableOutput('bonusmeteorite_table')))))))
+                                         selected = "year"))),
+                         plotOutput("plot_chooseyourown"))))))
 
 ##SERVER
 server <- function(input, output, session) {
@@ -300,7 +332,7 @@ server <- function(input, output, session) {
                            massslider = c(0,65000000),
                            meteoriteLCcheckbox = LC_names2,
                            corrvariable1 = "mass",
-                           corrvariable2 = "lc_sample",
+                           corrvariable2 = "year",
                            bonusyearslider = c(800,2021),
                            bonusmassslider = c(0,65000),
                            bonusfellfoundcheckbox = c("Fell", "Found"),
@@ -367,37 +399,50 @@ server <- function(input, output, session) {
     
     output$timelineplot <- renderDygraph({
         if (input$norm_check == FALSE) {
-            falls_decade_plot <- subset(falls_decade, select = -c(falls_per_1M))
-            dygraph(falls_decade_plot, main="Meteorite Falls", height=400) %>%
+            fall_found_decade2 <- subset(fall_found_decade2, select = -c(falls_per_1M,finds_per_1M))
+            dygraph(fall_found_decade2, main="Meteorites", height=400) %>%
             dyOptions(drawGapEdgePoints = TRUE,fillGraph = TRUE,drawGrid=FALSE) %>%
             dyLegend(width = 400) %>%
             dySeries("meteorite_falls", label = "Falls") %>%
-            dyAxis("y", label = "Meteorite Falls")  %>%
-            dySeries("population", axis = "y2", label = "Population") %>%
-            dyAxis("y2", label = "Population", independentTicks =TRUE)  %>%
+            dySeries("meteorite_finds", label = "Finds", axis = input$yaxes) %>%
+            dyAxis("y")  %>%
+            dyAxis("y2", independentTicks=TRUE)  %>%
             dyRangeSelector(height = 75)
         } else {
-            falls_decade_plot <- subset(falls_decade, select = -c(meteorite_falls))
-            dygraph(falls_decade_plot, main="Meteorite Falls (Normalized per 1 Million Population)", height=400) %>%
+            fall_found_decade2 <- subset(fall_found_decade2, select = -c(meteorite_falls, meteorite_finds))
+            dygraph(fall_found_decade2, main="Meteorites (Normalized per 1 Million Population)", height=400) %>%
             dyOptions(drawGapEdgePoints = TRUE,fillGraph = TRUE,drawGrid=FALSE) %>%
             dyLegend(width = 400) %>%
             dySeries("falls_per_1M", label = "Normalized Falls") %>%
-            dyAxis("y", label = "Meteorite Falls")  %>%
-            dySeries("population", axis = "y2", label = "Population") %>%
-            dyAxis("y2", label = "Population", independentTicks =TRUE)  %>%
+            dyAxis("y")  %>%
+            dySeries("finds_per_1M", label = "Normalized Finds", axis = input$yaxes) %>%
+            dyAxis("y2", independentTicks=TRUE)  %>%
             dyRangeSelector(height = 75)}})
-    
-    output$timelinecorrplot = renderPlot({
+
+
+    output$timelinecorrplot1 = renderPlot({
         if (input$norm_check == FALSE) {
-            falls_decade_plot <- subset(falls_decade, select = -c(falls_per_1M))          
-            corrplot <- ggplot(falls_decade_plot, aes(x=population, y=meteorite_falls)) + geom_point()
-            corrplot <- corrplot + geom_smooth(method="auto", se=TRUE, fullrange=FALSE, level=0.95)
+            corrplot <- ggplot(falls_pop, aes(x=population, y=meteorite_falls)) + geom_point()
+            corrplot <- corrplot + geom_smooth(method=lm, se=FALSE)
+            corrplot <- corrplot + ggtitle(paste0("Falls vs. Population\nCorrelation Coeff. = ",cor(falls_pop)[1,2]))
             corrplot
         } else {
-            falls_decade_plot <- subset(falls_decade, select = -c(meteorite_falls))         
-            corrplot <- ggplot(falls_decade_plot, aes(x=population, y=falls_per_1M)) + geom_point()
-            corrplot <- corrplot + geom_smooth(method="auto", se=TRUE, fullrange=FALSE, level=0.95)
+            corrplot <- ggplot(nfalls_pop, aes(x=population, y=falls_per_1M)) + geom_point()
+            corrplot <- corrplot + geom_smooth(method=lm, se=FALSE)
+            corrplot <- corrplot + ggtitle(paste0("Normalized Falls vs. Population\nCorrelation Coeff. = ",cor(nfalls_pop)[1,2]))
             corrplot}})
+    
+    output$timelinecorrplot2 = renderPlot({
+        if (input$norm_check == FALSE) {
+            corrplot2 <- ggplot(finds_pop, aes(x=population, y=meteorite_finds)) + geom_point()
+            corrplot2 <- corrplot2 + geom_smooth(method=lm, se=FALSE)
+            corrplot2 <- corrplot2 + ggtitle(paste0("Finds vs. Population\nCorrelation Coeff. = ",cor(finds_pop)[1,2]))
+            corrplot2
+        } else {
+            corrplot2 <- ggplot(nfinds_pop, aes(x=population, y=finds_per_1M)) + geom_point()
+            corrplot2 <- corrplot2 + geom_smooth(method=lm, se=FALSE)
+            corrplot2 <- corrplot2 + ggtitle(paste0("Normalized Finds vs. Population\nCorrelation Coeff. = ",cor(nfinds_pop)[1,2]))
+            corrplot2}})
     
     output$kmodesmap = renderLeaflet({
         kmodes_filtered <- subset(kmodes, Cluster == input$KMradio)
@@ -408,6 +453,15 @@ server <- function(input, output, session) {
         kmodes_filtered <- subset(kmodes, Cluster == input$KMradio)
         kmodes_filtered})
     
+    output$gsplot = renderPlot({
+        gsplot <- subset(gsfellfound, fallorfind %in% input$gridsquares)
+        gsplot <- gsplot[-c(1) ] 
+        colnames(gsplot) <- c("latitude", "longitude", "score", "group")
+        p <- ggplot()
+        p <- p + geom_point(data = gsplot, aes(x = longitude, y = latitude, color=group, group=group))
+        p <- p + labs(x = NULL, y= NULL)
+        p})
+            
     output$gsmap = renderLeaflet({
         gsplot <- subset(gsfellfound, fallorfind %in% input$gridsquares)
         gsplot <- gsplot[-c(1) ] 
@@ -415,17 +469,17 @@ server <- function(input, output, session) {
         getColor <- function(gsplot) {
             sapply(gsplot$score, function(score) {
                 if(score == -1) {
-                    "blue"
+                    "purple"
                 } else if(score == 1) {
-                    "red"
+                    "orange"
                 } else {
-                    "green"}})}
+                    "yellow"}})}
         icons <- awesomeIcons(
             icon = 'ios-close',
             iconColor = 'black',
             library = 'ion',
             markerColor = getColor(gsplot))
-        map <- leaflet(gsplot) %>% addTiles() %>% addAwesomeMarkers(~longitude, ~latitude, icon=icons)
+        map <- leaflet(gsplot) %>% addTiles() %>% addAwesomeMarkers(~longitude, ~latitude, icon=icons, label = ~group)
         map})
     
     output$plot_chooseyourown = renderPlot({
@@ -435,8 +489,7 @@ server <- function(input, output, session) {
         p <- p + geom_smooth(method = lm, se = FALSE, color="blue") 
         p <- p + ggtitle(paste0(reac$corrvariable1," vs. ", reac$corrvariable2,"\nCorrelation Coeff. = ",cor(corr_final)[1,2]))
         p <- p + labs(x = reac$corrvariable1, y= reac$corrvariable2)
-        p})
-}
+        p})}
 
 ## Run App
 shinyApp(ui = ui, server = server)
