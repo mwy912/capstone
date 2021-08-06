@@ -176,7 +176,7 @@ ui <- fluidPage(
                              h4("Tab 1: About"),
                              div("This page."),
                              h4("Tab 2: Meteorite Data"),
-                             div("This tab shows a map and table of the meteorite data.  One subtab shows more detail after data scrubbing was complete, while the second subtab is the complete dataset from NASA."),
+                             div("This tab shows a map and table of the meteorite data.  One subtab shows more detail after data scrubbing was complete, while the second subtab is the complete dataset."),
                              h4("Tab 3: KModes Clustering"),
                              div("This is the results of an unsupervised clustering.  KModes clustering is similar to KMeans clustering, except it is for categorical data."),
                              h4("Tab 4: Land Cover PDFs"),
@@ -186,7 +186,17 @@ ui <- fluidPage(
                              h4("Tab 6: Falls vs. Finds"),
                              div("This shows whether a 1°x1° grid square has seen a fall event, a find, or both."),
                              h4("Tab 7: Correlation Tester"),
-                             div("This allows a comparison of numeric variables in the dataset.")))),
+                             div("This allows a comparison of numeric variables in the dataset."),
+                             p(),
+                             hr(),
+                             div("Data Sources:"),
+                             a(href="https://catalog.data.gov/dataset/meteorite-landings","NASA/Meteorite Landings"),
+                             p(),
+                             a(href="https://en.wikipedia.org/wiki/Meteorite_classification#Traditional_classification_scheme","Meteorite Classification"),
+                             p(),
+                             a(href="https://daac.ornl.gov/ISLSCP_II/guides/historic_landcover_xdeg.html","ISLSCP II Historical Land Cover and Land Use, 1700-1990"),
+                             p(),
+                             a(href="https://sedac.ciesin.columbia.edu/data/set/urbanspatial-hist-urban-pop-3700bc-ad2000/data-download","Historical Urban Population, v1 (3700 – 2000)")))),
             tabPanel("Meteorite Data",
                      tabsetPanel(
                          tabPanel("Scrubbed Data",
@@ -204,6 +214,16 @@ ui <- fluidPage(
                                                  min = 0, 
                                                  max = 65000,
                                                  value = c(0,65000)),
+                                     sliderInput("lonslider",
+                                                 label = "Longitude Range",
+                                                 min = -180, 
+                                                 max = 180,
+                                                 value = c(-180,180)),
+                                     sliderInput("latslider",
+                                                 label = "Latitude Range",
+                                                 min = -90, 
+                                                 max = 90,
+                                                 value = c(-90,90)),
                                      checkboxGroupInput(inputId = "fellfoundcheckbox",
                                                         label = "Fall or Find:",
                                                         inline = TRUE,
@@ -227,9 +247,14 @@ ui <- fluidPage(
                                                         selected = LC_names2,
                                                         choices = LC_names2,
                                                         inline = TRUE)),
-                                 mainPanel(
-                                     leafletOutput("meteoritemap"),
-                                     dataTableOutput('meteorite_table')))),
+                         mainPanel(
+                             tabsetPanel(
+                                 tabPanel("Map",
+                                          fluidRow(
+                                              column(6,leafletOutput("meteoritemap")),
+                                              column(6,verbatimTextOutput("meteoritesummary")))),
+                                 tabPanel("Data Table",
+                                          dataTableOutput("meteorite_table")))))),
                     tabPanel("Full Dataset",
                              sidebarLayout(
                                  sidebarPanel(
@@ -245,6 +270,17 @@ ui <- fluidPage(
                                                  min = 0, 
                                                  max = 65000,
                                                  value = c(0,65000)),
+                                     sliderInput("bonuslonslider",
+                                                 label = "Longitude Range",
+                                                 min = -180, 
+                                                 max = 180,
+                                                 value = c(-180,180)),
+                                     sliderInput("bonuslatslider",
+                                                 label = "Latitude Range",
+                                                 min = -90, 
+                                                 max = 90,
+                                                 value = c(-90,90)),
+
                                      checkboxGroupInput(inputId = "bonusvalid",
                                                         label = "Valid or Relict:",
                                                         inline = TRUE,
@@ -257,21 +293,31 @@ ui <- fluidPage(
                                                         selected = c("Fell", "Found"),
                                                         choiceNames = c("Observed Falling","Found later"),
                                                         choiceValues = c("Fell", "Found"))),
-                                 mainPanel(
-                                     leafletOutput("bonusmeteoritemap"),
-                                     dataTableOutput('bonusmeteorite_table')))))),
+                         mainPanel(
+                             tabsetPanel(
+                                 tabPanel("Map",
+                                          fluidRow(
+                                              column(6,leafletOutput("bonusmeteoritemap")),
+                                              column(6,verbatimTextOutput("bonusmeteoritesummary")))),
+                                 tabPanel("Data Table",
+                                          dataTableOutput("bonusmeteorite_table")))))))),
             tabPanel("KModes Clustering",
                      sidebarLayout(
                          sidebarPanel(
                              radioButtons(
                                  inputId="KMradio",
                                  label="Choose cluster to display",
-                                 selected = NULL,
-                                 inline = TRUE,
-                                 choices = c(0:6))),
+                                 inline = FALSE,
+                                 choiceNames = c("None","A","B","C","D","E","F","G"),
+                                 choiceValues = c(99,0,1,2,3,4,5,6))),
                          mainPanel(
-                             leafletOutput("kmodesmap"),
-                             dataTableOutput("kmodestable")))),
+                             tabsetPanel(
+                                 tabPanel("Map",
+                                          fluidRow(
+                                             column(6,leafletOutput("kmodesmap")),
+                                             column(6,verbatimTextOutput("kmodessummary")))),
+                                 tabPanel("Data Table",
+                                          dataTableOutput("kmodestable")))))),
             tabPanel("Land Cover PDFs",
                      sidebarLayout(
                          sidebarPanel(checkboxGroupInput(inputId = "pdfcheckbox",
@@ -330,11 +376,15 @@ server <- function(input, output, session) {
                            typecheckbox = c("Stony","Stony-Iron","Iron","-"),
                            chondritecheckbox = c("Chondrite","Achondrite","-"),
                            massslider = c(0,65000000),
+                           lonslider = c(-180,180),
+                           latslider = c(-90,90),
                            meteoriteLCcheckbox = LC_names2,
                            corrvariable1 = "mass",
                            corrvariable2 = "year",
                            bonusyearslider = c(800,2021),
                            bonusmassslider = c(0,65000),
+                           bonuslonslider = c(-180,180),
+                           bonuslatslider = c(-90,90),
                            bonusfellfoundcheckbox = c("Fell", "Found"),
                            bonusvalid = c("Valid","Relict"))
     
@@ -343,11 +393,15 @@ server <- function(input, output, session) {
     observeEvent (input$typecheckbox, {reac$typecheckbox = input$typecheckbox})
     observeEvent (input$chondritecheckbox, {reac$chondritecheckbox = input$chondritecheckbox})
     observeEvent (input$massslider, {reac$massslider = input$massslider *1000})
+    observeEvent (input$lonslider, {reac$lonslider = input$lonslider})
+    observeEvent (input$latslider, {reac$latslider = input$latslider})
     observeEvent (input$meteoriteLCcheckbox, {reac$meteoriteLCcheckbox = input$meteoriteLCcheckbox})
     observeEvent (input$corrvariable1, {reac$corrvariable1 = input$corrvariable1})
     observeEvent (input$corrvariable2, {reac$corrvariable2 = input$corrvariable2})
     observeEvent (input$bonusyearslider, {reac$bonusyearslider = input$bonusyearslider})
     observeEvent (input$bonusmassslider, {reac$bonusmassslider = input$bonusmassslider *1000})
+    observeEvent (input$bonuslonslider, {reac$bonuslonslider = input$bonuslonslider})
+    observeEvent (input$bonuslatslider, {reac$bonuslatslider = input$bonuslatslider})
     observeEvent (input$bonusfellfoundcheckbox, {reac$bonusfellfoundcheckbox = input$bonusfellfoundcheckbox})
     observeEvent (input$bonusvalid, {reac$bonusvalid = input$bonusvalid})
     
@@ -367,6 +421,9 @@ server <- function(input, output, session) {
         map_meteorites <- subset(map_meteorites, Type %in% reac$typecheckbox)
         map_meteorites <- subset(map_meteorites, Chondrite %in% reac$chondritecheckbox)
         map_meteorites <- subset(map_meteorites, Land_Cover %in% reac$meteoriteLCcheckbox)
+        map_meteorites <- map_meteorites[map_meteorites$latitude >= reac$latslider[1] & map_meteorites$latitude <= reac$latslider[2],]
+        map_meteorites <- map_meteorites[map_meteorites$longitude >= reac$lonslider[1] & map_meteorites$longitude <= reac$lonslider[2],]
+        
         map_meteorites})
 
     output$meteoritemap = renderLeaflet({
@@ -377,13 +434,30 @@ server <- function(input, output, session) {
         map_meteorites <- subset(map_meteorites, Type %in% reac$typecheckbox)
         map_meteorites <- subset(map_meteorites, Chondrite %in% reac$chondritecheckbox)
         map_meteorites <- subset(map_meteorites, Land_Cover %in% reac$meteoriteLCcheckbox)
+        map_meteorites <- map_meteorites[map_meteorites$latitude >= reac$latslider[1] & map_meteorites$latitude <= reac$latslider[2],]
+        map_meteorites <- map_meteorites[map_meteorites$longitude >= reac$lonslider[1] & map_meteorites$longitude <= reac$lonslider[2],]
         map <- leaflet(map_meteorites) %>% addTiles() %>% addMarkers(label = ~Name, clusterOptions = markerClusterOptions())
         map})
+    
+        output$meteoritesummary <- renderPrint({
+        map_meteorites <- meteorites
+        map_meteorites <- subset(map_meteorites, Fell_or_Found %in% reac$fellfoundcheckbox)
+        map_meteorites <- map_meteorites[map_meteorites$Year >= reac$yearslider[1] & map_meteorites$Year <= reac$yearslider[2],]
+        map_meteorites <- map_meteorites[map_meteorites$Mass >= reac$massslider[1] & map_meteorites$Mass <= reac$massslider[2],]
+        map_meteorites <- subset(map_meteorites, Type %in% reac$typecheckbox)
+        map_meteorites <- subset(map_meteorites, Chondrite %in% reac$chondritecheckbox)
+        map_meteorites <- subset(map_meteorites, Land_Cover %in% reac$meteoriteLCcheckbox)
+        map_meteorites <- map_meteorites[map_meteorites$latitude >= reac$latslider[1] & map_meteorites$latitude <= reac$latslider[2],]
+        map_meteorites <- map_meteorites[map_meteorites$longitude >= reac$lonslider[1] & map_meteorites$longitude <= reac$lonslider[2],]
+        summary(map_meteorites)})
+
     
     output$bonusmeteorite_table = renderDataTable({
         map_meteorites <- meteorites_full
         map_meteorites <- map_meteorites[map_meteorites$Year >= reac$bonusyearslider[1] & map_meteorites$Year <= reac$bonusyearslider[2],]
         map_meteorites <- map_meteorites[map_meteorites$Mass >= reac$bonusmassslider[1] & map_meteorites$Mass <= reac$bonusmassslider[2],]
+        map_meteorites <- map_meteorites[map_meteorites$latitude >= reac$bonuslatslider[1] & map_meteorites$latitude <= reac$bonuslatslider[2],]
+        map_meteorites <- map_meteorites[map_meteorites$longitude >= reac$bonuslonslider[1] & map_meteorites$longitude <= reac$bonuslonslider[2],]
         map_meteorites <- subset(map_meteorites, Fell_or_Found %in% reac$bonusfellfoundcheckbox)
         map_meteorites <- subset(map_meteorites, Valid %in% reac$bonusvalid)
         map_meteorites})
@@ -392,10 +466,22 @@ server <- function(input, output, session) {
         map_meteorites <- meteorites_full
         map_meteorites <- map_meteorites[map_meteorites$Year >= reac$bonusyearslider[1] & map_meteorites$Year <= reac$bonusyearslider[2],]
         map_meteorites <- map_meteorites[map_meteorites$Mass >= reac$bonusmassslider[1] & map_meteorites$Mass <= reac$bonusmassslider[2],]
+        map_meteorites <- map_meteorites[map_meteorites$latitude >= reac$bonuslatslider[1] & map_meteorites$latitude <= reac$bonuslatslider[2],]
+        map_meteorites <- map_meteorites[map_meteorites$longitude >= reac$bonuslonslider[1] & map_meteorites$longitude <= reac$bonuslonslider[2],]
         map_meteorites <- subset(map_meteorites, Fell_or_Found %in% reac$bonusfellfoundcheckbox)
         map_meteorites <- subset(map_meteorites, Valid %in% reac$bonusvalid)
         map <- leaflet(map_meteorites) %>% addTiles() %>% addMarkers(label = ~Name, clusterOptions = markerClusterOptions())
         map})
+    
+        output$bonusmeteoritesummary <- renderPrint({
+        map_meteorites <- meteorites_full
+        map_meteorites <- map_meteorites[map_meteorites$Year >= reac$bonusyearslider[1] & map_meteorites$Year <= reac$bonusyearslider[2],]
+        map_meteorites <- map_meteorites[map_meteorites$Mass >= reac$bonusmassslider[1] & map_meteorites$Mass <= reac$bonusmassslider[2],]
+        map_meteorites <- map_meteorites[map_meteorites$latitude >= reac$bonuslatslider[1] & map_meteorites$latitude <= reac$bonuslatslider[2],]
+        map_meteorites <- map_meteorites[map_meteorites$longitude >= reac$bonuslonslider[1] & map_meteorites$longitude <= reac$bonuslonslider[2],]
+        map_meteorites <- subset(map_meteorites, Fell_or_Found %in% reac$bonusfellfoundcheckbox)
+        map_meteorites <- subset(map_meteorites, Valid %in% reac$bonusvalid)
+        summary(map_meteorites)})
     
     output$timelineplot <- renderDygraph({
         if (input$norm_check == FALSE) {
@@ -451,7 +537,14 @@ server <- function(input, output, session) {
     
     output$kmodestable =  renderDataTable({
         kmodes_filtered <- subset(kmodes, Cluster == input$KMradio)
-        kmodes_filtered})
+        kmodes_filtered2 <- subset(kmodes_filtered, select=-c(1))
+        kmodes_filtered2})
+    
+    output$kmodessummary <- renderPrint({
+        kmodes_filtered <- subset(kmodes, Cluster == input$KMradio)
+        kmodes_filtered2 <- subset(kmodes_filtered, select=-c(1))
+        kmodes_filtered2$lc_sample <- as.factor(kmodes_filtered2$lc_sample)
+        summary(kmodes_filtered2)})
     
     output$gsplot = renderPlot({
         gsplot <- subset(gsfellfound, fallorfind %in% input$gridsquares)
